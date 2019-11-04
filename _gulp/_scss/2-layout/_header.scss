@@ -1,0 +1,73 @@
+/* header */
+.header {
+  background-color: transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  &__logo {
+    position: absolute;
+    left: 98px;
+    top: 98px;
+    color: $add-color-1;
+    font-size: 28px;
+    line-height: 1;
+    font-weight: bold;
+    text-transform: lowercase;
+    z-index: 50;
+  }
+  &__btn {
+    position: absolute;
+    z-index: 50;
+    right: 59px;
+    top: 59px;
+    border-radius: 50%;
+    border: 4px solid $add-color-1;
+    text-align: center;
+    width: 148px;
+    height: 148px;
+    overflow: hidden;
+    transition: all 0.35s;
+    &:before {
+      color: $color-white;
+      text-transform: uppercase;
+      line-height: 15px;
+      font-size: 12px;
+      content: 'Меню';
+      opacity: 1;
+      visibility: visible;
+      transition: all 0.35s;
+    }
+    &::after {
+      content: '\1f5d9';
+      font-family: $font-icomoon;
+      color: $add-color-1;
+      font-size: 120px;
+      font-weight: 400;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform-origin: 50%;
+      transform: translate(-50%,-50%) rotate(-45deg);
+      opacity: 0;
+      visibility: hidden;
+      transition: all 0.35s;
+    }
+    &:hover {
+      background: $add-color-1;
+      @include neon($add-color-1);
+    }
+    &.is-active {
+      &::before {
+        opacity: 0;
+        visibility: hidden;
+      }
+      &::after {
+        opacity: 1;
+        visibility: visible;
+        color: $color-white;
+        transform: translate(-50%,-50%) rotate(0deg);
+      }
+    }
+  }
+}

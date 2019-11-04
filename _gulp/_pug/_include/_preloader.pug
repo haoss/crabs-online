@@ -1,0 +1,29 @@
+//- .loader
+//-   .bouncing-loader
+//-     div
+//-     div
+//-     div
+
+-var navigation = { 'Главная': 'index.html', 'Услуги': 'services.html', 'Портфолио': 'portfolio.html', 'Контакты': 'contacts.html' };
+  
+nav.navigation(role="navigation")
+  ul
+    each val, key in navigation
+      if active === key
+        li.active
+          a(href=val, title=key)= key
+      else
+        li
+          a(href=val, title=key)= key
+
+.social
+  a(href="#!" target='_blank')
+    i.icon-facebook
+  a(href="#!" target='_blank')
+    i.icon-twitter
+  a(href="#!" target='_blank')
+    i.icon-youtube-play
+  a(href="#!" target='_blank')
+    i.icon-telegram
+  a(href="#!" target='_blank')
+    i.icon-vk

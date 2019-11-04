@@ -1,0 +1,71 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Главная' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Главная' + ' - Crabs Agency' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    #section1.section.home
+      .container
+        .section__text.section__text--one Crabs
+
+        .home__title
+          b Crabs
+          span agency
+
+        .home__wrapper
+          div
+            .home__slogan создание и продвижение диджитал продуктов
+          div
+            .home__content
+              p Закажите просчет на сайт сегодня и получите одну из дополнительных услуг бесплатно*
+              a(href="#!").more.home__content-more заявка на просчет
+      
+
+    a.section-btn(data-scroll href="#section2")
+      span
+
+    #section2.section.about
+      .container.section__container
+        p Crabs это команда UI/UX специалистов и маркетологов
+
+    #section3.section.services
+      .container.section__container
+        p Мы предоставляем широкий спектр услуг
+
+    #section4.section.projects
+      .container.section__container
+        p Проекты от команды Crabs / портфолио от наших специалистов
+
+    #section4.section
+      p 4
+
+    #section5.section
+      p 5
+
+    #section6.section
+      p 6
+
+    a.section-btn(data-scroll href="#section6")
+      span
+
+    #section7.section
+      p 7
+
+
+    include ./_include/_footer
+    div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+
