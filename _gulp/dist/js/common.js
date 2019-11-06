@@ -60,6 +60,16 @@ $(document).on('ready', function(){
   });
 
   navigation();
+
+  //Chrome Smooth Scroll
+  try {
+      $.browserSelector();
+      if($("html").hasClass("chrome")) {
+          $.smoothScroll();
+      }
+  } catch(err) {
+
+  };
 });
 
 $(window).on('load', function() {

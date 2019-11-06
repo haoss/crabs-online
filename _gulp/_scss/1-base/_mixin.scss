@@ -39,11 +39,12 @@
   cursor: pointer;
 }
 
-@mixin neon($color) {
-  box-shadow: 0 0 5px rgba($color,.2), 0 0 30px rgba($color,.2), 0 0 45px rgba($color,.2), 0 0 65px rgba($color,.2), 0 0 85px rgba($color,.2);
-}
-@mixin text-neon($color) {
-  text-shadow: 0 0 5px rgba($color,.2), 0 0 30px rgba($color,.2), 0 0 45px rgba($color,.2), 0 0 65px rgba($color,.2), 0 0 85px rgba($color,.2);
+@mixin neon($color, $opacity: 0.2, $block:"") {
+  @if $block == 'text' {
+    text-shadow: 0 0 5px rgba($color,$opacity), 0 0 30px rgba($color,$opacity), 0 0 45px rgba($color,$opacity), 0 0 65px rgba($color,$opacity), 0 0 85px rgba($color,$opacity);
+  } @else {
+    box-shadow: 0 0 5px rgba($color,$opacity), 0 0 30px rgba($color,$opacity), 0 0 45px rgba($color,$opacity), 0 0 65px rgba($color,$opacity), 0 0 85px rgba($color,$opacity);
+  }
 }
 
 @mixin border-radius($radius) {

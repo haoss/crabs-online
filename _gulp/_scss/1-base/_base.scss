@@ -99,7 +99,7 @@ a, .link {
   color: $link-color;
   text-decoration: underline;
   outline: none;
-  transition: color 0.35s, background 0.35s, border 0.35s;
+  transition: all 0.35s;
   &:hover, &:focus, &:active {
     color: $link-color;
     text-decoration: none;
@@ -283,10 +283,48 @@ img, .img {
     &--one {
       transform: translate(-270px,-95px);
     }
+    &--two {
+      left: inherit;
+      transform: translate(23px,177px);
+    }
+    &--three {
+      left: inherit;
+      transform: translate(-166px,327px);
+    }
   }
   &__container {
     position: relative;
     z-index: 15;
+  }
+  &__header {
+    color: $color-white;
+    padding-left: 56px;
+    margin-bottom: 60px;
+    div {
+      font-weight: bold;
+      font-size: 60px;
+      line-height: 1.3;
+      display: block;
+      position: relative;
+      color: $color-white;
+      &::before {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.2' d='M7 0H23L19 26H7V0Z' fill='%23AF38F8'/%3E%3Cpath d='M0 6H15L13 20H0V6Z' fill='%23AF38F8'/%3E%3C/svg%3E");
+        width: 23px;
+        height: 26px;
+        content: '';
+        position: absolute;
+        margin-left: -56px;
+        margin-top: 26px;
+      }
+    }
+    small {
+      font-size: 20px;
+      &:first-child {
+        display: block;
+        font-weight: 400;
+        line-height: 1.6;
+      }
+    }
   }
 }
 
@@ -373,5 +411,11 @@ ol li {
   }
   &--white {
     color: $color-white !important;
+  }
+  &--add1 {
+    color: $add-color-1 !important;
+  }
+  &--add2 {
+    color: $add-color-2 !important;
   }
 }

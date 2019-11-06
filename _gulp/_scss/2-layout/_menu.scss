@@ -48,7 +48,7 @@
         opacity: 0;
         visibility: hidden;
         transition: all 0.35s;
-        box-shadow: 0 0 5px rgba($add-color-1,1), 0 0 30px rgba($add-color-1,1), 0 0 45px rgba($add-color-1,1), 0 0 65px rgba($add-color-1,1), 0 0 85px rgba($add-color-1,1);
+        @include neon($add-color-1, 1);
       }
       &>a, &>span {
         display: inline-block;
@@ -61,6 +61,7 @@
         &:hover {
           color: transparent;
           -webkit-text-stroke: 4px $add-color-1;
+          @include neon($add-color-1, 0.2, text);
         }
       }
       &.active {
@@ -71,7 +72,7 @@
         &>a, &>span {
           color: transparent;
           -webkit-text-stroke: 4px $add-color-1;
-          @include text-neon($add-color-1);
+          @include neon($add-color-1, 0.2, text);
         }
       }
     }
