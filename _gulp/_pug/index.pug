@@ -31,7 +31,7 @@ html(lang="ru")
               a(href="#!").more.home__content-more заявка на просчет
       
 
-    a.section-btn(data-scroll href="#section2")
+    a.section-btn.is-visible(data-scroll href="#section2")
       span
 
     #section2.section.about
@@ -53,6 +53,9 @@ html(lang="ru")
               p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
               p
                 a(href="#!").more Подробнее
+
+    a.section-btn(data-scroll href="#section3")
+      span
 
     #section3.section.services
       .container.section__container
@@ -172,26 +175,66 @@ html(lang="ru")
           div
             a(href="#!").more.more--add1 смотреть наши работы
 
+    a.section-btn(data-scroll href="#section4")
+      span
 
     #section4.section.projects
       .container.section__container
+        .section__text.section__text--four проекты
 
-        .section__header
+        .section__header.section__header--projects
           .h2 Проекты от команды Crabs / портфолио от наших специалистов
 
-    #section4.section
-      p 4
+        ul.nav.projects__nav#projectsTab(role='tablist')
+          li.projects__nav-item
+            a.projects__nav-link.active#1-tab(data-toggle='tab' href='#tab1' role='tab' aria-controls='tab1' aria-selected='true') Все 
+              span.color--add1 (53)
+          li.projects__nav-item
+            a.projects__nav-link#2-tab(data-toggle='tab' href='#tab2' role='tab' aria-controls='tab2' aria-selected='false') Сайты 
+              span.color--add1 (78)
+          li.projects__nav-item
+            a.projects__nav-link#3-tab(data-toggle='tab' href='#tab3' role='tab' aria-controls='tab3' aria-selected='false') Seo 
+              span.color--add1 (22)
+          li.projects__nav-item
+            a.projects__nav-link#4-tab(data-toggle='tab' href='#tab4' role='tab' aria-controls='tab4' aria-selected='false') Продакшн 
+              span.color--add1 (34)
 
-    #section5.section
-      p 5
+      .tab-content
+        .tab-pane.fade.active.show#tab1(role='tabpanel' aria-labelledby='1-tab') 1
+        .tab-pane.fade#tab2(role='tabpanel' aria-labelledby='2-tab') 2
+        .tab-pane.fade#tab3(role='tabpanel' aria-labelledby='3-tab') 3
+        .tab-pane.fade#tab4(role='tabpanel' aria-labelledby='4-tab') 4
 
-    #section6.section
-      p 6
+    a.section-btn(data-scroll href="#section5")
+      span
+
+    #section5.section.achievements
+      .container.section__container
+        .section__text.section__text--five достижения
+
+        .section__header
+          .h2 Наши достижения
 
     a.section-btn(data-scroll href="#section6")
       span
 
+    #section6.section
+      .container.section__container
+        .section__text.section__text--six клиенты
+
+        .section__header 
+          .h2 Наши клиенты
+
+    a.section-btn(data-scroll href="#section7")
+      span
+
     #section7.section
+      p 6
+
+    a.section-btn(data-scroll href="#section8")
+      span
+
+    #section8.section
       p 7
 
 

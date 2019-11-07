@@ -231,9 +231,13 @@ img, .img {
     z-index: 15;
     transition: all 0.35s;
     font-size: 0;
-    opacity: 1;
-    visibility: visible;
+    opacity: 0;
+    visibility: hidden;
     transition: all 0.35s;
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
     body.is-active & {
       opacity: 0;
       visibility: hidden;
@@ -291,6 +295,18 @@ img, .img {
       left: inherit;
       transform: translate(-166px,327px);
     }
+    &--four {
+      left: inherit;
+      transform: translate(-124px,20px);
+    }
+    &--five {
+      left: inherit;
+      transform: translate(-50px,10px);
+    }
+    &--six {
+      left: inherit;
+      transform: translate(-165px,-10px);
+    }
   }
   &__container {
     position: relative;
@@ -324,6 +340,9 @@ img, .img {
         font-weight: 400;
         line-height: 1.6;
       }
+    }
+    &--projects {
+      margin-bottom: 105px;
     }
   }
 }
@@ -417,5 +436,12 @@ ol li {
   }
   &--add2 {
     color: $add-color-2 !important;
+  }
+}
+
+.fade {
+  transition: opacity .15s linear;
+  &:not(.show) {
+    opacity: 0;
   }
 }

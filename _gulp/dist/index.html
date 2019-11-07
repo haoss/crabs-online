@@ -65,7 +65,7 @@
                     </div>
                 </div>
             </div>
-        </div><a class="section-btn" data-scroll href="#section2"><span></span></a>
+        </div><a class="section-btn is-visible" data-scroll href="#section2"><span></span></a>
         <div class="section about" id="section2">
             <div class="container section__container">
                 <div class="section__text section__text--two">Crabs</div>
@@ -85,7 +85,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div><a class="section-btn" data-scroll href="#section3"><span></span></a>
         <div class="section services" id="section3">
             <div class="container section__container">
                 <div class="section__text section__text--three">услуги</div>
@@ -187,24 +187,47 @@
                     <div><a class="more more--add1" href="#!">смотреть наши работы</a></div>
                 </div>
             </div>
-        </div>
+        </div><a class="section-btn" data-scroll href="#section4"><span></span></a>
         <div class="section projects" id="section4">
             <div class="container section__container">
-                <div class="section__header">
+                <div class="section__text section__text--four">проекты</div>
+                <div class="section__header section__header--projects">
                     <div class="h2">Проекты от команды Crabs / портфолио от наших специалистов</div>
                 </div>
+                <ul class="nav projects__nav" id="projectsTab" role="tablist">
+                    <li class="projects__nav-item"><a class="projects__nav-link active" id="1-tab" data-toggle="tab" href="#tab1" role="tab" aria-controls="tab1" aria-selected="true">Все <span class="color--add1">(53)</span></a></li>
+                    <li class="projects__nav-item"><a class="projects__nav-link" id="2-tab" data-toggle="tab" href="#tab2" role="tab" aria-controls="tab2" aria-selected="false">Сайты <span class="color--add1">(78)</span></a></li>
+                    <li class="projects__nav-item"><a class="projects__nav-link" id="3-tab" data-toggle="tab" href="#tab3" role="tab" aria-controls="tab3" aria-selected="false">Seo <span class="color--add1">(22)</span></a></li>
+                    <li class="projects__nav-item"><a class="projects__nav-link" id="4-tab" data-toggle="tab" href="#tab4" role="tab" aria-controls="tab4" aria-selected="false">Продакшн <span class="color--add1">(34)</span></a></li>
+                </ul>
             </div>
-        </div>
-        <div class="section" id="section4">
-            <p>4</p>
-        </div>
-        <div class="section" id="section5">
-            <p>5</p>
-        </div>
-        <div class="section" id="section6">
-            <p>6</p>
+            <div class="tab-content">
+                <div class="tab-pane fade active show" id="tab1" role="tabpanel" aria-labelledby="1-tab">1</div>
+                <div class="tab-pane fade" id="tab2" role="tabpanel" aria-labelledby="2-tab">2</div>
+                <div class="tab-pane fade" id="tab3" role="tabpanel" aria-labelledby="3-tab">3</div>
+                <div class="tab-pane fade" id="tab4" role="tabpanel" aria-labelledby="4-tab">4</div>
+            </div>
+        </div><a class="section-btn" data-scroll href="#section5"><span></span></a>
+        <div class="section achievements" id="section5">
+            <div class="container section__container">
+                <div class="section__text section__text--five">достижения</div>
+                <div class="section__header">
+                    <div class="h2">Наши достижения</div>
+                </div>
+            </div>
         </div><a class="section-btn" data-scroll href="#section6"><span></span></a>
+        <div class="section" id="section6">
+            <div class="container section__container">
+                <div class="section__text section__text--six">клиенты</div>
+                <div class="section__header"> 
+                    <div class="h2">Наши клиенты</div>
+                </div>
+            </div>
+        </div><a class="section-btn" data-scroll href="#section7"><span></span></a>
         <div class="section" id="section7">
+            <p>6</p>
+        </div><a class="section-btn" data-scroll href="#section8"><span></span></a>
+        <div class="section" id="section8">
             <p>7</p>
         </div>
         <!-- Footer-->
@@ -220,6 +243,7 @@
         <script src="./js/libs/jquery/jquery-migrate-3.0.1.min.js"></script>
         <script src="./js/libs/magnific-popup/jquery.magnific-popup.min.js"></script>
         <script src="./js/libs/smooth-scroll/smooth-scroll.min.js"></script>
+        <script src="./js/libs/bootstrap/bootstrap.bundle.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>

@@ -174,14 +174,16 @@
   padding: 138px 0 150px 0;
   background-color: #1C1C1C;
   &::before {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 1900 1935'%3E%3Cellipse cx='949.5' cy='935' fill='%23171717' rx='2323.5' ry='1000'/%3E%3C/svg%3E"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 1900 1935'%3E%3Cellipse cx='949.5' cy='935' fill='%231C1C1C' rx='2323.5' ry='1000'/%3E%3C/svg%3E");
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 1900 1935'%3E%3Cellipse cx='949.5' cy='935' fill='%23171717' rx='2323.5' ry='1000'/%3E%3C/svg%3E");
     background-size: inherit;
-    background-position: bottom center, top center;
+    background-position: bottom center;
   }
   &::after {
     background: repeating-linear-gradient(90deg,rgba($color-white,.1) 0px,rgba($color-white,.1) 1px,rgba($color-black,0) 0px,rgba($color-black,0) 359px);
     background-position: 50% 100%;
     background-size: 359px 100%;
+    mask: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 1900 1935'%3E%3Cellipse cx='949.5' cy='935' fill='%23171717' rx='2323.5' ry='1000'/%3E%3C/svg%3E");
+    mask-position: bottom center;
   }
   &__wrapper {
     display: flex;
@@ -384,7 +386,57 @@
 }
 
 .projects {
+  padding-top: 215px;
+  padding-bottom: 190px;
+  min-height: inherit;
   &::after {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 1900 1935'%3E%3Cellipse cx='949.5' cy='935' fill='%231C1C1C' rx='2323.5' ry='1000'/%3E%3C/svg%3E");
   }
+  &__nav {
+    margin: 0 0 145px 21px;
+    padding: 0;
+    font-size: 0;
+    &-item {
+      display: inline-block;
+      vertical-align: middle;
+      font-size: 24px;
+      margin: 0 0 20px 0;
+      list-style: none;
+      &+& {
+        margin-left: 10px;
+      }
+    }
+    &-link {
+      text-decoration: none;
+      color: #696969;
+      display: block;
+      height: 74px;
+      line-height: 66px;
+      white-space: normal;
+      min-width: 146px;
+      text-align: center;
+      padding: 0 35px;
+      border: 4px solid transparent;
+      &.active {
+        color: $color-white;
+        border-color: $add-color-1;
+      }
+    }
+  }
+}
+
+.tab-content {
+  position: relative;
+  z-index: 15;
+  &>.tab-pane {
+    display: none;
+  }
+  &>.active {
+    display: block;
+  }
+}
+
+.achievements {
+  padding-top: 285px;
+  padding-bottom: 120px;
 }
