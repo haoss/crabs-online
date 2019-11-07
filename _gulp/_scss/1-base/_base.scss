@@ -35,6 +35,50 @@ body {
   }
 }
 
+.body {
+  &__up {
+    position: fixed;
+    right: 95px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 76px;
+    height: 76px;
+    line-height: 74px;
+    border-radius: 50%;
+    border: 2px solid $add-color-2;
+    color: $color-white;
+    text-align: center;
+    z-index: 15;
+    transition: all 0.35s;
+    font-size: 0;
+    // opacity: 0;
+    // visibility: hidden;
+    font-weight: 400;
+    transition: all 0.35s;
+    &.is-visible {
+      opacity: 1;
+      visibility: visible;
+    }
+    body.is-active & {
+      opacity: 0;
+      visibility: hidden;
+    }
+    &:hover {
+      background: $add-color-2;
+      @include neon($add-color-2);
+    }
+    &::before {
+      content: '\1f53a';
+      font-family: $font-icomoon;
+      color: $color-white;
+      font-size: 30px;
+      display: inline-block;
+      vertical-align: middle;
+      line-height: 1;
+    }
+  }
+}
+
 //  Typography
 .h1, .h2, .h3, .h4, .h5, .h6, h1, h2, h3, h4, h5, h6 {
   color: $primary-color;
@@ -224,6 +268,7 @@ img, .img {
     transform: translate(-50%,-130px);
     width: 64px;
     height: 64px;
+    line-height: 64px;
     border-radius: 50%;
     border: 2px solid $add-color-2;
     color: $color-white;
@@ -232,6 +277,7 @@ img, .img {
     transition: all 0.35s;
     font-size: 0;
     opacity: 0;
+    font-weight: 400;
     visibility: hidden;
     transition: all 0.35s;
     &.is-visible {
@@ -250,10 +296,10 @@ img, .img {
       content: '\1f53b';
       font-family: $font-icomoon;
       color: $color-white;
-      font-size: 40px;
+      font-size: 30px;
       display: inline-block;
       vertical-align: middle;
-      transform: translateY(2px);
+      line-height: 1;
     }
     span {
       width: 1px;
@@ -323,6 +369,7 @@ img, .img {
       display: block;
       position: relative;
       color: $color-white;
+      margin-bottom: 0;
       &::before {
         background-image: url("data:image/svg+xml;charset=utf8,%3Csvg width='23' height='26' viewBox='0 0 23 26' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath opacity='0.2' d='M7 0H23L19 26H7V0Z' fill='%23AF38F8'/%3E%3Cpath d='M0 6H15L13 20H0V6Z' fill='%23AF38F8'/%3E%3C/svg%3E");
         width: 23px;
@@ -343,6 +390,12 @@ img, .img {
     }
     &--projects {
       margin-bottom: 105px;
+    }
+    &--achievements {
+      margin-bottom: 145px;
+    }
+    &--clients {
+      margin-bottom: 85px;
     }
   }
 }
