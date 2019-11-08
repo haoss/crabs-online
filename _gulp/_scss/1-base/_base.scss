@@ -36,6 +36,31 @@ body {
 }
 
 .body {
+  &__social {
+    position: absolute;
+    z-index: 15;
+    left: 127px;
+    top: calc(100vh - 185px - 185px);
+    // bottom: 185px;
+    font-size: 17px;  
+    a {
+      text-align: center;
+      display: block;
+      text-decoration: none;
+      color: $color-white;
+      margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+      i {
+        display: block;
+      }
+      &:hover {
+        color: $add-color-1;
+        @include neon($add-color-1, 1, text);
+      }
+    }
+  }
   &__up {
     position: fixed;
     right: 95px;
