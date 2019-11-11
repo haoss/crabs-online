@@ -30,15 +30,19 @@ body {
   &.is-active {
     // overflow: hidden;
     // padding-right: 17px;
-    position: fixed;
+    // position: fixed;
     overflow-y: scroll;
+    .section__container {
+      opacity: 0;
+      visibility: hidden;
+    }
   }
 }
 
 .body {
   &__social {
-    position: absolute;
-    z-index: 15;
+    position: fixed;
+    z-index: 25;
     left: 127px;
     top: calc(100vh - 185px - 185px);
     // bottom: 185px;
@@ -70,7 +74,7 @@ body {
     height: 76px;
     line-height: 74px;
     border-radius: 50%;
-    border: 2px solid $add-color-2;
+    border: 2px solid $add-color-1;
     color: $color-white;
     text-align: center;
     z-index: 15;
@@ -89,8 +93,8 @@ body {
       visibility: hidden;
     }
     &:hover {
-      background: $add-color-2;
-      @include neon($add-color-2);
+      background: $add-color-1;
+      @include neon($add-color-1);
     }
     &::before {
       content: '\1f53a';
@@ -382,6 +386,9 @@ img, .img {
   &__container {
     position: relative;
     z-index: 15;
+    opacity: 1;
+    visibility: visible;
+    transition: all 0.35s;
   }
   &__header {
     color: $color-white;
@@ -415,6 +422,9 @@ img, .img {
     }
     &--projects {
       margin-bottom: 105px;
+      div {
+        font-size: 56px;
+      }
     }
     &--achievements {
       margin-bottom: 145px;

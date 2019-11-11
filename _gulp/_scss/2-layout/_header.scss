@@ -6,7 +6,7 @@
   left: 0;
   right: 0;
   &__logo {
-    position: absolute;
+    position: fixed;
     left: 98px;
     top: 98px;
     color: $add-color-1;
@@ -17,7 +17,7 @@
     z-index: 50;
   }
   &__btn {
-    position: absolute;
+    position: fixed;
     z-index: 50;
     right: 59px;
     top: 59px;

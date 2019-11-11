@@ -167,6 +167,10 @@
       background: $add-color-2;
       line-height: 40px;
       text-align: center;
+      &:hover {
+        background: $add-color-1;
+        @include neon($add-color-1)
+      }
       i {
         line-height: 1;
         display: inline-block;

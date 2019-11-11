@@ -6,3 +6,23 @@ button {
     outline: none;
   }
 }
+
+.btn {
+  display: inline-block;
+  height: 76px;
+  line-height: 67px;
+  color: $color-white;
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 700;
+  border: 4px solid $add-color-1;
+  text-align: center;
+  min-width: 257px;
+  border-radius: 50px;
+  font-family: $font-ubuntu;
+  &:hover {
+    color: $color-white;
+    background: $add-color-1;
+    @include neon($add-color-1)
+  }
+}

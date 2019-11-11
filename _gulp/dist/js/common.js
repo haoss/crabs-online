@@ -59,6 +59,13 @@ $(document).on('ready', function(){
     midClick: true // Allow opening popup on middle mouse click. Always set it to true if you don't provide alternative source in href.
   });
 
+  $('.projects__carousel').slick({
+    slidesToShow: 1,
+    centerMode: true,
+    centerPadding: '380px',
+    infinite: false
+  });
+
   navigation();
 
   //Chrome Smooth Scroll
