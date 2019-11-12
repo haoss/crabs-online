@@ -88,10 +88,10 @@ body {
       opacity: 1;
       visibility: visible;
     }
-    body.is-active & {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // body.is-active & {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
     &:hover {
       background: $add-color-1;
       @include neon($add-color-1);
@@ -305,18 +305,18 @@ img, .img {
     z-index: 15;
     transition: all 0.35s;
     font-size: 0;
-    opacity: 0;
     font-weight: 400;
-    visibility: hidden;
     transition: all 0.35s;
+    // opacity: 0;
+    // visibility: hidden;
     &.is-visible {
       opacity: 1;
       visibility: visible;
     }
-    body.is-active & {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // body.is-active & {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
     &:hover {
       background: $add-color-2;
       @include neon($add-color-2);

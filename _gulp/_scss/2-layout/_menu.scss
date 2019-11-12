@@ -17,7 +17,7 @@
   right: 0;
   bottom: 0;
   left: 0;
-  // background: pink;
+  background: #171717;
   z-index: 20;
   display: flex;
   align-items: center;
@@ -28,6 +28,32 @@
   opacity: 0;
   visibility: hidden;
   transition: all 0.5s;
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 5;
+
+    background: repeating-linear-gradient(90deg,rgba($color-white,.1) 0px,rgba($color-white,.1) 1px,rgba($color-black,0) 0px,rgba($color-black,0) 359px);
+    background-position: 50% 100%;
+    background-size: 359px 100%;
+  }
+  &::after {
+    content: 'Crabs';
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -1;
+    font-size: 450px;
+    line-height: 549px;
+    font-weight: bold;
+    opacity: 0.06;
+    line-height: 0;
+    transform: translate(-270px,312px);
+  }
   &.is-active {
     opacity: 1;
     visibility: visible;
@@ -36,6 +62,7 @@
     li {
       padding-right: 330px;
       position: relative;
+      z-index: 5;
       &::after {
         content: '';
         width: 288px;

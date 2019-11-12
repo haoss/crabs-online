@@ -63,7 +63,40 @@ $(document).on('ready', function(){
     slidesToShow: 1,
     centerMode: true,
     centerPadding: '380px',
-    infinite: false
+    infinite: false,
+    dots: false,
+    responsive: [
+      {
+        breakpoint: 1520,
+        settings: {
+          centerPadding: '280px',
+        }
+      },
+      {
+        breakpoint: 1199,
+        settings: {
+          centerPadding: '80px',
+          dots: true,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 991,
+        settings: {
+          centerPadding: '60px',
+          dots: true,
+          arrows: false
+        }
+      },
+      {
+        breakpoint: 767,
+        settings: {
+          centerPadding: '0px',
+          dots: true,
+          arrows: false
+        }
+      }
+    ]
   });
 
   navigation();

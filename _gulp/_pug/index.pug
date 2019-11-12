@@ -64,7 +64,7 @@ html(lang="ru")
         .section__header
           .h2 Мы предоставляем широкий спектр услуг
 
-        .services__wrapper
+        mixin servicesBlock(name, icon)
           .services__block
             .services__block-line1
             .services__block-line2
@@ -72,102 +72,19 @@ html(lang="ru")
             .services__block-line4
             .services__block-line5
             .services__block-content
-              .services__block-img
-                i.icon-service-1
-              a(href="1-service.html").services__block-title Создание и 
-                br
-                | разработка сайта
-              .services__block-more Подробнее
-                
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-2
-              a(href="1-service.html").services__block-title Графический/веб дизайн
-              .services__block-more Подробнее
-              
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-3
-              a(href="1-service.html").services__block-title Продвижение 
-                br
-                | сайта
-              .services__block-more Подробнее
-                
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-4
-              a(href="1-service.html").services__block-title Настройка 
-                br
-                | рекламы
+              .services__block-img!= icon
+              a(href="1-service.html").services__block-title!= name
               .services__block-more Подробнее
 
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-5
-              a(href="1-service.html").services__block-title Фото/видео
-                br
-                | продакшн
-              .services__block-more Подробнее
-                
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-6
-              a(href="1-service.html").services__block-title Создание сайтов на конструкторе
-              .services__block-more Подробнее
-              
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-7
-              a(href="1-service.html").services__block-title Продвижение личного бренда
-              .services__block-more Подробнее
-                
-          .services__block
-            .services__block-line1
-            .services__block-line2
-            .services__block-line3
-            .services__block-line4
-            .services__block-line5
-            .services__block-content
-              .services__block-img
-                i.icon-service-8
-              a(href="1-service.html").services__block-title Продвижение в социальных сетях
-              .services__block-more Подробнее
+        .services__wrapper
+          +servicesBlock('Создание и <br>разработка сайта', '<i class="icon-service-1"></i>')
+          +servicesBlock('Графический/веб дизайн', '<i class="icon-service-2"></i>')
+          +servicesBlock('Продвижение <br>сайта', '<i class="icon-service-3"></i>')
+          +servicesBlock('Настройка <br>рекламы', '<i class="icon-service-4"></i>')
+          +servicesBlock('Фото/видео <br>продакшн', '<i class="icon-service-5"></i>')
+          +servicesBlock('Создание сайтов на конструкторе', '<i class="icon-service-6"></i>')
+          +servicesBlock('Продвижение личного бренда', '<i class="icon-service-7"></i>')
+          +servicesBlock('Продвижение в социальных сетях', '<i class="icon-service-8"></i>')
 
         .services__footer
           div
@@ -201,236 +118,49 @@ html(lang="ru")
 
       .tab-content
         .tab-pane.fade.active.show#tab1(role='tabpanel' aria-labelledby='1-tab')
+          mixin projectsBlock(name, description, img)
+            .projects__block
+              .container.section__container
+                .projects__block-wrapper
+                  .projects__block-text
+                    .projects__block-title= name
+                    .projects__block-description= description
+                    a(href="1-project.html").more Подробнее
+                    a(href="portfolio.html").btn.projects__btn Посмотреть все
+                  .projects__block-img
+                    img(src= img, alt="")
+
           .projects__carousel
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nike
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-2-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nowy Styl
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-3-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+            +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
 
         .tab-pane.fade#tab2(role='tabpanel' aria-labelledby='2-tab')
           .projects__carousel
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nike
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-2-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nowy Styl
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-3-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nike
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-2-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nowy Styl
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-3-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+            +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+            +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
 
         .tab-pane.fade#tab3(role='tabpanel' aria-labelledby='3-tab')
           .projects__carousel
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nowy Styl
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-3-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nike
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-2-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nowy Styl
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-3-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nike
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-2-big.jpg", alt="")
+            +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+            +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
 
         .tab-pane.fade#tab4(role='tabpanel' aria-labelledby='4-tab')
           .projects__carousel
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nike
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-2-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Nowy Styl
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-3-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
-            .projects__block
-              .container.section__container
-                .projects__block-wrapper
-                  .projects__block-text
-                    .projects__block-title Adidas
-                    .projects__block-description промо-сайт
-                    a(href="1-project.html").more Подробнее
-                    a(href="portfolio.html").btn.projects__btn Посмотреть все
-                  .projects__block-img
-                    img(src="./tmp/portfolio-1-big.jpg", alt="")
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+            +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+            +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+            +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
 
     a.section-btn(data-scroll href="#section5")
       span
@@ -469,23 +199,19 @@ html(lang="ru")
         .section__header.section__header--clients
           .h2 Наши клиенты
 
+        mixin clientBlock(img)
+          .clients__block
+            img(src= img, alt="")
+
         .clients__wrapper
-          .clients__block
-            img(src="./tmp/client-img-1.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-2.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-3.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-1.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-1.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-2.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-3.png", alt="")
-          .clients__block
-            img(src="./tmp/client-img-1.png", alt="")
+          +clientBlock('./tmp/client-img-1.png')
+          +clientBlock('./tmp/client-img-2.png')
+          +clientBlock('./tmp/client-img-3.png')
+          +clientBlock('./tmp/client-img-1.png')
+          +clientBlock('./tmp/client-img-1.png')
+          +clientBlock('./tmp/client-img-2.png')
+          +clientBlock('./tmp/client-img-3.png')
+          +clientBlock('./tmp/client-img-1.png')
 
     a.section-btn(data-scroll href="#section7")
       span

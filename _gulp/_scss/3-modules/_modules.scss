@@ -35,10 +35,10 @@
       margin-left: 43px;
       z-index: 5;
     }
-    body.is-active & {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // body.is-active & {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
   }
   &__wrapper {
     display: flex;
@@ -49,10 +49,10 @@
     opacity: 1;
     visibility: visible;
     transition: all 0.35s;
-    body.is-active & {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // body.is-active & {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
   }
   &__slogan {
     font-size: 18px;
@@ -106,7 +106,7 @@
 
 .about {
   min-height: inherit;
-  padding: 255px 0 155px 0;
+  padding: 255px 0 180px 0;
   &::after {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 4647 2000'%3E%3Cpath fill='%231C1C1C' d='M4647 1000c0 552.3-1040.3 1000-2323.5 1000S0 1552.3 0 1000 1040.3 0 2323.5 0 4647 447.7 4647 1000z'/%3E%3C/svg%3E");
   }
@@ -145,7 +145,7 @@
 
 .services {
   min-height: inherit;
-  padding: 138px 0 150px 0;
+  padding: 138px 0 180px 0;
   background-color: #1C1C1C;
   &::before {
     background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='4647' height='2000' fill='none' viewBox='0 0 4647 2000'%3E%3Cpath fill='%23171717' d='M4647 1000c0 552.3-1040.3 1000-2323.5 1000S0 1552.3 0 1000 1040.3 0 2323.5 0 4647 447.7 4647 1000z'/%3E%3C/svg%3E");
@@ -241,6 +241,7 @@
       text-decoration: none;
       display: block;
       line-height: 1.6;
+      padding-right: 15px;
       &::before {
         content: '';
         position: absolute;
@@ -351,6 +352,7 @@
   }
   &__footer {
     display: flex;
+    white-space: nowrap;
     &>div {
       padding-left: 142px;
       &+div {
@@ -458,6 +460,8 @@
     }
   }
   &__carousel {
+    height: 787px;
+    overflow: hidden;
     .slick-arrow {
       width: 108px;
       height: 108px;
@@ -482,10 +486,10 @@
           }
         }
       }
-      body.is-active & {
-        opacity: 0;
-        visibility: hidden;
-      }
+      // body.is-active & {
+      //   opacity: 0;
+      //   visibility: hidden;
+      // }
     }
     .slick-prev {
       left: 135px;
@@ -523,7 +527,7 @@
 
 .achievements {
   padding-top: 285px;
-  padding-bottom: 120px;
+  padding-bottom: 180px;
   min-height: inherit;
   background-color: #1C1C1C;
   &::before {
@@ -622,9 +626,10 @@
     margin-bottom: 90px;
     img {
       margin: 0 auto;
+      width: 100%;
       display: block;
       height: 120px;
-      object-fit: none;
+      object-fit: scale-down;
       filter: drop-shadow(0 0 25px rgba($add-color-1,1));
     }
     &:nth-last-child(-n+4) {
