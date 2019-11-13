@@ -27,7 +27,7 @@
     width: 148px;
     height: 148px;
     overflow: hidden;
-    transition: all 0.35s;
+    transition: background 0.35s, box-shadow 0.35s;
     &:before {
       color: $color-white;
       text-transform: uppercase;

@@ -66,3 +66,21 @@ footer.footer
       .footer__copyright © 2019 crabs. All Rights Reserved
 
 a.body__up(data-scroll href="#body")
+
+#feedback.modal.mfp-hide
+  button(type="button").modal__close Закрыть
+  .modal__wrapper
+    .modal__title Связаться с нами
+    .modal__container
+      form.modal__form(action="#!" method="post")
+        fieldset
+          .form__group
+            label.form__label Ваше имя:
+            input#modal_name.form__field(type="text" name="modal_name" value="Андрей " autofocus)
+          .form__group
+            label.form__label Ваш Email:
+            input#modal_email.form__field(type="email" name="modal_email")
+          .form__group
+            label.form__label Ваше сообщение:
+            textarea#modal_message.form__field(name="modal_message") Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев  ...
+        button.btn(type="button") Отправить

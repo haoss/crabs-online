@@ -45,14 +45,14 @@
     content: 'Crabs';
     position: absolute;
     left: 50%;
-    top: 0;
+    top: 50%;
     z-index: -1;
     font-size: 450px;
     line-height: 549px;
     font-weight: bold;
     opacity: 0.06;
     line-height: 0;
-    transform: translate(-270px,312px);
+    transform: translate(-270px,-125px);
   }
   &.is-active {
     opacity: 1;

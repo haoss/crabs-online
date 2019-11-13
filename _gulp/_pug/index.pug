@@ -15,7 +15,7 @@ html(lang="ru")
     include ./_include/_header
 
     #section1.section.home
-      .container
+      #home__container.container.section__container
         .section__text.section__text--one Crabs
 
         .home__title
@@ -28,14 +28,14 @@ html(lang="ru")
           div
             .home__content
               p Закажите просчет на сайт сегодня и получите одну из дополнительных услуг бесплатно*
-              a(href="#!").more.home__content-more заявка на просчет
+              a(href="#feedback").more.home__content-more.open-popup-link заявка на просчет
       
 
-    a.section-btn.is-visible(data-scroll href="#section2")
+    a#section-btn1.section-btn(data-scroll href="#section2")
       span
 
     #section2.section.about
-      .container.section__container
+      #about__container.container.section__container
         .section__text.section__text--two Crabs
 
         .section__header
@@ -54,11 +54,11 @@ html(lang="ru")
               p
                 a(href="#!").more Подробнее
 
-    a.section-btn(data-scroll href="#section3")
-      span
+    //- a#section-btn2.section-btn(data-scroll href="#section3")
+    //-   span
 
     #section3.section.services
-      .container.section__container
+      #services__container.container.section__container
         .section__text.section__text--three услуги
 
         .section__header
@@ -88,12 +88,12 @@ html(lang="ru")
 
         .services__footer
           div
-            a(href="#!").more заявка на просчет
+            a(href="#feedback").more.open-popup-link заявка на просчет
           div
             a(href="#!").more.more--add1 смотреть наши работы
 
-    a.section-btn(data-scroll href="#section4")
-      span
+    //- a#section-btn3.section-btn(data-scroll href="#section4")
+    //-   span
 
     #section4.section.projects
       .container.section__container
@@ -162,8 +162,8 @@ html(lang="ru")
             +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
             +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
 
-    a.section-btn(data-scroll href="#section5")
-      span
+    //- a#section-btn4.section-btn(data-scroll href="#section5")
+    //-   span
 
     #section5.section.achievements
       .container.section__container
@@ -189,8 +189,8 @@ html(lang="ru")
               | 143
             .achievements__block-text Успешных компаний по продвижению
 
-    a.section-btn(data-scroll href="#section6")
-      span
+    //- a#section-btn5.section-btn(data-scroll href="#section6")
+    //-   span
 
     #section6.section.clients
       .container.section__container
@@ -213,7 +213,7 @@ html(lang="ru")
           +clientBlock('./tmp/client-img-3.png')
           +clientBlock('./tmp/client-img-1.png')
 
-    a.section-btn(data-scroll href="#section7")
+    a#section-btn6.section-btn(data-scroll href="#section7")
       span
 
     #section7.section.request

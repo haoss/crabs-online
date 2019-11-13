@@ -20,6 +20,7 @@ button {
   min-width: 257px;
   border-radius: 50px;
   font-family: $font-ubuntu;
+  transition: background 0.35s, box-shadow 0.35s, color 0.35s, border 0.35s;
   &:hover {
     color: $color-white;
     background: $add-color-1;

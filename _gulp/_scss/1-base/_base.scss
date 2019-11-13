@@ -80,8 +80,8 @@ body {
     z-index: 15;
     transition: all 0.35s;
     font-size: 0;
-    // opacity: 0;
-    // visibility: hidden;
+    opacity: 0;
+    visibility: hidden;
     font-weight: 400;
     transition: all 0.35s;
     &.is-visible {
@@ -294,7 +294,8 @@ img, .img {
   &-btn {
     position: absolute;
     left: 50%;
-    transform: translate(-50%,-130px);
+    transform: translateX(-50%);
+    margin-top: -130px;
     width: 64px;
     height: 64px;
     line-height: 64px;
@@ -303,20 +304,15 @@ img, .img {
     color: $color-white;
     text-align: center;
     z-index: 15;
-    transition: all 0.35s;
     font-size: 0;
     font-weight: 400;
-    transition: all 0.35s;
-    // opacity: 0;
-    // visibility: hidden;
+    transition: background 0.35s, box-shadow 0.35s;
+    opacity: 0;
+    visibility: hidden;
     &.is-visible {
       opacity: 1;
       visibility: visible;
     }
-    // body.is-active & {
-    //   opacity: 0;
-    //   visibility: hidden;
-    // }
     &:hover {
       background: $add-color-2;
       @include neon($add-color-2);
@@ -386,9 +382,6 @@ img, .img {
   &__container {
     position: relative;
     z-index: 15;
-    opacity: 1;
-    visibility: visible;
-    transition: all 0.35s;
   }
   &__header {
     color: $color-white;
