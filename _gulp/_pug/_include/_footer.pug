@@ -40,7 +40,7 @@ footer.footer
                 a(href="#!" target='_blank')
                   i.icon-facebook
                 a(href="#!" target='_blank')
-                  i.icon-telegram
+                  i.icon-brand-telegram
                 a(href="#!" target='_blank')
                   i.icon-google-plus
                 a(href="#!" target='_blank')
@@ -50,13 +50,13 @@ footer.footer
 
         nav.footer__navigation
           ul
-            li: a(href="#!") Главная
+            li: a(href="index.html") Главная
             li: a(href="#!") О нас
-            li: a(href="#!") Услуги
-            li: a(href="#!") Портфолио
+            li: a(href="services.html") Услуги
+            li: a(href="portfolio.html") Портфолио
             li: a(href="#!") Наши клиенты
             li: a(href="#!") отзывы
-            li: a(href="#!") контакты
+            li: a(href="contacts.html") контакты
   
     .footer__bottom
       ul.footer__links
@@ -70,8 +70,8 @@ a.body__up(data-scroll href="#body")
 #feedback.modal.mfp-hide
   button(type="button").modal__close Закрыть
   .modal__wrapper
-    .modal__title Связаться с нами
     .modal__container
+      .modal__title Связаться с нами
       form.modal__form(action="#!" method="post")
         fieldset
           .form__group
@@ -83,4 +83,25 @@ a.body__up(data-scroll href="#body")
           .form__group
             label.form__label Ваше сообщение:
             textarea#modal_message.form__field(name="modal_message") Сайт рыбатекст поможет дизайнеру, верстальщику, вебмастеру сгенерировать несколько абзацев  ...
-        button.btn(type="button") Отправить
+        .form__group
+          .form__checkbox
+            input#modal_checkbox1(type="checkbox" name="modal_checkbox1").form__checkbox-input
+            span.form__checkbox-span
+            label.form__checkbox-label(for="modal_checkbox1") Согласен на обработку персональных данных
+          .form__checkbox
+            input#modal_checkbox2(type="checkbox" name="modal_checkbox2" checked).form__checkbox-input
+            span.form__checkbox-span
+            label.form__checkbox-label(for="modal_checkbox2") Я ознакомился с 
+              a(href="#!" target="_blank") правилами, политикой конфиденциальности
+              |  и принимаю их условия
+        .clear20
+        button(type="button").btn.btn--add2.btn--bg.btn--neon.btn--block Отправить
+
+#success.modal.mfp-hide
+  button(type="button").modal__close Закрыть
+  .modal__wrapper
+    .modal__container
+      .modal__success
+        i.icon-checkmark
+        .h2 Ваша заявка отправлена
+        p Наш менеджер ответит вам в течении 20 мин

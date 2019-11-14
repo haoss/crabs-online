@@ -21,6 +21,12 @@
       right: 25px;
     }
   }
+  .modal {
+    &__close {
+      top: 25px;
+      right: 25px;
+    }
+  }
 }
 
 @media only screen and (max-width: 1439px) {
@@ -50,6 +56,19 @@
       left: 25px;
     }
   }
+  .modal {
+    &__close {
+      width: 76px;
+      height: 76px;
+      border-width: 2px;
+      &::before {
+        font-size: 10px;
+      }
+      &::after {
+        font-size: 90px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 1399px) {
@@ -61,6 +80,7 @@
   }
   .home {
     height: auto;
+    min-height: inherit;
     padding-top: 310px;
     padding-bottom: 170px;
     &__wrapper {
@@ -75,10 +95,13 @@
   }
   .section {
     &__header {
-      div {
+      &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 52px;
         &::before {
           margin-top: 22px;
+          width: 23px;
+          height: 26px;
+          background-size: 23px 26px;
         }
       }
     }
@@ -171,12 +194,16 @@
     }
     &__header {
       margin-bottom: 60px;
-      div {
+      &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 40px;
         &::before {
           margin-top: 13px;
         }
       }
+    }
+    &--top {
+      padding-top: 165px;
+      padding-bottom: 130px;
     }
   }
   .about {
@@ -399,6 +426,9 @@
           transform: translate(-5px,-50%);
         }
       }
+      &--one {
+        margin-top: -130px;
+      }
     }
     &__text {
       font-size: 240px;
@@ -411,7 +441,7 @@
           margin-bottom: 10px;
         }
       }
-      div {
+      &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 27px;
         &::before {
           margin-top: 4px;
@@ -588,6 +618,33 @@
       }
     }
   }
+  .modal {
+    &__close {
+      width: 56px;
+      height: 56px;
+    }
+    &__wrapper {
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+  }
+  .contacts {
+    &__links {
+      a {
+        width: 56px;
+        height: 56px;
+        border-width: 2px;
+        -webkit-text-stroke-width: 1px;
+        font-size: 21px;
+      }
+    }
+    &__block {
+      &-title {
+        margin-bottom: 15px;
+        font-size: 16px;
+      }
+    }
+  }
 }
 
 @media only screen and (max-width: 767px) {
@@ -602,7 +659,6 @@
   }
   .home {
     padding-top: 70px;
-    padding-bottom: 140px;
     align-items: flex-start;
     &__wrapper {
       text-align: center;
@@ -738,6 +794,7 @@
       right: 10px;
       &::before {
         font-size: 7px;
+        vertical-align: 4px;
       }
       &::after {
         font-size: 60px;
@@ -794,6 +851,49 @@
       font-size: 150px;
     }
   }
+  .modal {
+    &__close {
+      width: 40px;
+      height: 40px;
+      top: 10px;
+      right: 10px;
+      &::before {
+        font-size: 7px;
+      }
+      &::after {
+        font-size: 60px;
+      }
+    }
+    &__title {
+      font-size: 24px;
+      letter-spacing: 0;
+      line-height: 1.3;
+      margin-bottom: 35px;
+    }
+    &__wrapper {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+    &__success {
+      .h2 {
+        font-size: 21px;
+      }
+      .icon-checkmark {
+        -webkit-text-stroke-width: 2px;
+        font-size: 60px;
+        margin: 0 auto 15px;
+      }
+    }
+  }
+  textarea.form__field {
+    padding: 15px;
+  }
+  .section {
+    &--top {
+      padding-top: 125px;
+      padding-bottom: 70px;
+    }
+  }
 }
 
 @media only screen and (max-width: 479px) {
@@ -814,7 +914,7 @@
     }
     &__header {
       padding-left: 30px;
-      div {
+      &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 21px;
         &::before {
           width: 13px;

@@ -24,6 +24,45 @@ button {
   &:hover {
     color: $color-white;
     background: $add-color-1;
-    @include neon($add-color-1)
+    @include neon($add-color-1);
+  }
+  &:active, &:focus {
+    color: $color-white;
+  }
+  &--bg {
+    background: $add-color-1;
+    &:hover {
+      background: transparent;
+    }
+  }
+  &--neon {
+    @include neon($add-color-1);
+    &:hover {
+      @include neon($add-color-1,0);
+    }
+  }
+
+  &--add2 {
+    border-color: $add-color-2;
+    &:hover {
+      background-color: $add-color-2;
+      @include neon($add-color-2);
+    }
+    &[class*="--bg"] {
+      background: $add-color-2;
+      &:hover {
+        background: transparent;
+      }
+    }
+    &[class*="--neon"] {
+      @include neon($add-color-2);
+      &:hover {
+        @include neon($add-color-2,0);
+      }
+    }
+  }
+  &--block {
+    display: block;
+    width: 100%;
   }
 }

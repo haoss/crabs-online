@@ -751,6 +751,14 @@
     background: #1b1b1b;
     border-radius: 6px;
     padding: 100px 50px 130px 50px;
+    overflow: hidden;
+  }
+  &__container {
+    transform: translateY(30px);
+    transition: all 1s;
+    .mfp-ready & {
+      transform: translateY(0px);
+    }
   }
   &__title {
     font-size: 48px;
@@ -765,9 +773,103 @@
     max-width: 450px;
     margin: 0 auto;
   }
+  &__success {
+    text-align: center;
+    color: rgba($color-white,.8);
+    font-size: 14px;
+    font-weight: 400;
+    .h2 {
+      color: $color-white;
+      font-size: 42px;
+      margin-bottom: 14px;
+    }
+    p {
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    .icon-checkmark {
+      font-size: 130px;
+      color: transparent;
+      margin: 0 auto 44px;
+      display: block;
+      -webkit-text-stroke: 4px $add-color-2;
+    }
+  }
 }
 
 .mfp-bg {
   background: #171717;
   opacity: 1;
+}
+
+.contacts {
+  min-height: inherit;
+  &__wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: -25px;
+    &>div {
+      margin-right: 115px;
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+  &__block {
+    margin-bottom: 25px;
+    &-title {
+      color: $color-white;
+      font-size: 22px;
+      margin-bottom: 30px;
+    }
+  }
+  &__links {
+    white-space: nowrap;
+    a {
+      display: inline-block;
+      margin-right: 10px;
+      width: 68px;
+      height: 68px;
+      border-radius: 50%;
+      border: 4px solid $add-color-1;
+      text-decoration: none;
+      color: transparent;
+      -webkit-text-stroke: 1px $add-color-1;
+      text-align: center;
+      position: relative;
+      font-size: 24px;
+      @include neon($add-color-1,0.05);
+      i {
+        @include neon($add-color-1,0.5,text);
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        transition: text-shadow 0.35s;
+        &::before {
+          color: transparent;
+        }
+      }
+      &:last-child {
+        margin-right: 0;
+      }
+      &:hover {
+        box-shadow: none;
+        i {
+          text-shadow: none;
+        }
+      }
+    }
+    &--add2 {
+      a {
+        border-color: $add-color-2;
+        -webkit-text-stroke-color: $add-color-2;
+        @include neon($add-color-2,.05);
+        i {
+          @include neon($add-color-2,0.5,text);
+        }
+      }
+    }
+  }
 }

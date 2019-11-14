@@ -16,7 +16,7 @@
     display: block;
     height: 68px;
     border: 2px solid transparent;
-    border-radius: 50px;
+    border-radius: 35px;
     background: #171717;
     color: $color-white;
     font-weight: 400;
@@ -28,6 +28,64 @@
     &:focus {
       outline: none;
       border-color: $add-color-2;
+    }
+  }
+  &__checkbox {
+    position: relative;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 17px;
+    &-span {
+      position: absolute;
+      height: 26px;
+      width: 26px;
+      background: #171717;
+      border-radius: 6px;
+      border: 2px solid transparent;
+      left: 0;
+      top: 0;
+      overflow: hidden;
+    }
+    &-label {
+      padding-left: 37px;
+      line-height: 1.6;
+      margin: 0;
+      padding-top: 3px;
+      cursor: pointer;
+      a {
+        color: rgba($color-white,.4);
+        &:hover {
+          color: $add-color-2;
+        }
+      }
+    }
+    &-input {
+      display: none;
+      &~[class*="-span"] {
+        &::before {
+          color: $color-white;
+          content: '\1f5f8';
+          font-family: $font-icomoon;
+          position: absolute;
+          left: 5px;
+          top: 4px;
+          opacity: 0;
+          line-height: 1;
+          transform: translateY(-5px);
+          transition-delay: 0s;
+        }
+      }
+      &:checked {
+        &~[class*="-span"] {
+          border-color: $add-color-2;
+          &::before {
+            transition: all 0.35s;
+            transition-delay: 0s;
+            transform: translateY(0px);
+            opacity: 1;
+          }
+        }
+      }
     }
   }
 }
