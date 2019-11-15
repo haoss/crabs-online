@@ -179,11 +179,12 @@ function scrollPage() {
   // Scene 1
   scene1Tl
     .fromTo('.home__title', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 'scene1Tl-line1')
-    .fromTo('.section__text--one', 1.5, {y: '-=15px'}, {y: 0}, 'scene1Tl-line1')
-    .fromTo('.home__wrapper', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=1', 'scene1Tl-line2')
+    .fromTo('.home__slogan', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo('.home__content', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
     .fromTo('.header__logo', 1, {autoAlpha: 0, x: '-=25px'}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
     .fromTo('.body__social', 1, {autoAlpha: 0, x: '-=25px'}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
     .fromTo('.header__btn', 1, {autoAlpha: 0, x: 25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
+    .fromTo('#section-btn1', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, 'scene1Tl-line4')
   ;
   var scene1 = new ScrollMagic.Scene({
     triggerElement: "#section1",
@@ -194,7 +195,7 @@ function scrollPage() {
 
   // Btn scrollTo 1
   btn1Tl
-    .fromTo('#section-btn1', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+    
     .fromTo('#section-btn1 > span', 0.5, {autoAlpha: 0, height: 0}, {autoAlpha: 1, height: '160px'})
     .fromTo('#section-btn1 > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
     .fromTo('#section-btn1 > span > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
@@ -208,7 +209,10 @@ function scrollPage() {
 
   // Scene 2
   scene2Tl
-    .fromTo('#about__container', 1.5, {autoAlpha: 0, y: 100}, {autoAlpha: 1, y: 0})
+    .fromTo('#about__container .section__header', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+    .fromTo('.about__slogan', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo('.about__content', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo('.section__text--2', 1, {autoAlpha: 0}, {autoAlpha: 0.06})
   ;
   var scene2 = new ScrollMagic.Scene({
     triggerElement: "#section2",
