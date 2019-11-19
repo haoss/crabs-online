@@ -442,10 +442,8 @@ img, .img {
     &--clients {
       margin-bottom: 85px;
     }
-    &--services-inside {
-      margin-bottom: 110px;
-    }
     &--big {
+      margin-bottom: 110px;
       &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 80px;
         &::before {
@@ -457,7 +455,26 @@ img, .img {
         }
       }
     }
-    
+    &--one-service {
+      padding-left: 170px;
+      margin-bottom: 90px;
+      &>.h1, &>h1, &>.h2, &>h2 {
+        &::before {
+          display: none;
+        }
+        [class*="icon-"] {
+          color: $add-color-1;
+          font-size: 78px;
+          position: absolute;
+          left: -170px;
+          top: 50%;
+          transform: translateY(-50%);
+        }
+        i.icon-service-5 {
+          font-size: 59px;
+        }
+      }
+    }
   }
   &--top {
     padding-top: 235px;
