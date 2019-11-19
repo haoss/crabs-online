@@ -14,35 +14,59 @@ html(lang="ru")
 
     include ./_include/_header
 
-    #section8.section.section--top.contacts
+    #section10.section.services.section--top
       .container.section__container
-        .section__text.section__text--7 услуги
+        .section__text.section__text--8 услуги
 
-        .section__header.section__header--big
+        .section__header.section__header--services-inside.section__header--big
           .h1 Наши услуги
+        
+        mixin servicesRow(name, icon, number)
+          .services__row
+            .services__row-line1
+            .services__row-line2
+            .services__row-line3
+            .services__row-line4
+            .services__row-line5
+            .services__row-img!= icon
+            .services__row-content
+              .services__row-title
+                a(href="1-service.html")!= name
+              p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
+              .services__row-footer
+                div
+                  .services__row-numbers
+                    div
+                      strong= number
+                    div Реализовано
+                      br
+                      | проектов
+                div
+                  a(href="1-service.html").services__row-more Подробнее
 
-        .contacts__wrapper
-          .contacts__block
-            .contacts__block-title Соцсети
-            .contacts__links
-              a(href="#!" target="_blank")
-                i.icon-facebook
-              a(href="#!" target="_blank")
-                i.icon-twitter
-              a(href="#!" target="_blank")
-                i.icon-vk
-              a(href="#!" target="_blank")
-                i.icon-google-plus
-          .contacts__block
-            .contacts__block-title Месенджеры
-            .contacts__links.contacts__links--add2
-              a(href="#!" target="_blank")
-                i.icon-brand-telegram
-              a(href="#!" target="_blank")
-                i.icon-skype
-          .contacts__block
-            .contacts__block-title Связаться с нами
-            a(href="#feedback").btn.open-popup-link Написать
+        .services__wrapper.services__wrapper--inside
+          div
+            +servicesRow('Создание и разработка сайта', '<i class="icon-service-1"></i>', '25+')
+          div
+            +servicesRow('Продвижение сайта', '<i class="icon-service-2"></i>', '87+')
+          div
+            +servicesRow('Настройка рекламы', '<i class="icon-service-3"></i>', '73+')
+          div
+            +servicesRow('Графический/веб дизайн', '<i class="icon-service-4"></i>', '54+')
+          div
+            +servicesRow('Фото/видео продакшн', '<i class="icon-service-5"></i>', '25+')
+          div
+            +servicesRow('Продвижение личного бренда', '<i class="icon-service-6"></i>', '32+')
+          div
+            +servicesRow('Создание сайтов на конструкторе', '<i class="icon-service-7"></i>', '67+')
+          div
+            +servicesRow('Продвижение в социальных сетях', '<i class="icon-service-8"></i>', '46+')
+
+        .services__footer
+          div
+            a(href="#feedback").more.open-popup-link заявка на просчет
+          div
+            a(href="portfolio.html").more.more--add1 смотреть наши работы
 
 
     include ./_include/_footer

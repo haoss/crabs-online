@@ -391,6 +391,10 @@ img, .img {
       left: inherit;
       transform: translate(-455px,0px);
     }
+    &--8 {
+      left: inherit;
+      transform: translate(-300px,15px);
+    }
   }
   &__container {
     position: relative;
@@ -438,6 +442,9 @@ img, .img {
     &--clients {
       margin-bottom: 85px;
     }
+    &--services-inside {
+      margin-bottom: 110px;
+    }
     &--big {
       &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 80px;
@@ -450,6 +457,7 @@ img, .img {
         }
       }
     }
+    
   }
   &--top {
     padding-top: 235px;

@@ -1,5 +1,5 @@
 // Footer
-footer.footer
+footer#footer.footer
   .container.section__container
     
     // Seo
@@ -48,15 +48,15 @@ footer.footer
                 a(href="#!" target='_blank')
                   i.icon-instagram
 
-        nav.footer__navigation
+        nav.footer__navigation(role="navigation")
           ul
-            li: a(href="index.html") Главная
-            li: a(href="#!") О нас
-            li: a(href="services.html") Услуги
-            li: a(href="portfolio.html") Портфолио
-            li: a(href="#!") Наши клиенты
-            li: a(href="#!") отзывы
-            li: a(href="contacts.html") контакты
+            each val, key in footer__navigation
+              if active === key
+                li.active
+                  a(href=val, title=key)= key
+              else
+                li
+                  a(href=val, title=key)= key
   
     .footer__bottom
       ul.footer__links

@@ -1,5 +1,18 @@
 'use strict';
 
+/*
+* jquery-match-height 0.7.2 by @liabru
+* http://brm.io/jquery-match-height/
+* License MIT
+*/
+!function(t){"use strict";"function"==typeof define&&define.amd?define(["jquery"],t):"undefined"!=typeof module&&module.exports?module.exports=t(require("jquery")):t(jQuery)}(function(t){var e=-1,o=-1,n=function(t){return parseFloat(t)||0},a=function(e){var o=1,a=t(e),i=null,r=[];return a.each(function(){var e=t(this),a=e.offset().top-n(e.css("margin-top")),s=r.length>0?r[r.length-1]:null;null===s?r.push(e):Math.floor(Math.abs(i-a))<=o?r[r.length-1]=s.add(e):r.push(e),i=a}),r},i=function(e){var o={
+  byRow:!0,property:"height",target:null,remove:!1};return"object"==typeof e?t.extend(o,e):("boolean"==typeof e?o.byRow=e:"remove"===e&&(o.remove=!0),o)},r=t.fn.matchHeight=function(e){var o=i(e);if(o.remove){var n=this;return this.css(o.property,""),t.each(r._groups,function(t,e){e.elements=e.elements.not(n)}),this}return this.length<=1&&!o.target?this:(r._groups.push({elements:this,options:o}),r._apply(this,o),this)};r.version="0.7.2",r._groups=[],r._throttle=80,r._maintainScroll=!1,r._beforeUpdate=null,
+  r._afterUpdate=null,r._rows=a,r._parse=n,r._parseOptions=i,r._apply=function(e,o){var s=i(o),h=t(e),l=[h],c=t(window).scrollTop(),p=t("html").outerHeight(!0),u=h.parents().filter(":hidden");return u.each(function(){var e=t(this);e.data("style-cache",e.attr("style"))}),u.css("display","block"),s.byRow&&!s.target&&(h.each(function(){var e=t(this),o=e.css("display");"inline-block"!==o&&"flex"!==o&&"inline-flex"!==o&&(o="block"),e.data("style-cache",e.attr("style")),e.css({display:o,"padding-top":"0",
+  "padding-bottom":"0","margin-top":"0","margin-bottom":"0","border-top-width":"0","border-bottom-width":"0",height:"100px",overflow:"hidden"})}),l=a(h),h.each(function(){var e=t(this);e.attr("style",e.data("style-cache")||"")})),t.each(l,function(e,o){var a=t(o),i=0;if(s.target)i=s.target.outerHeight(!1);else{if(s.byRow&&a.length<=1)return void a.css(s.property,"");a.each(function(){var e=t(this),o=e.attr("style"),n=e.css("display");"inline-block"!==n&&"flex"!==n&&"inline-flex"!==n&&(n="block");var a={
+  display:n};a[s.property]="",e.css(a),e.outerHeight(!1)>i&&(i=e.outerHeight(!1)),o?e.attr("style",o):e.css("display","")})}a.each(function(){var e=t(this),o=0;s.target&&e.is(s.target)||("border-box"!==e.css("box-sizing")&&(o+=n(e.css("border-top-width"))+n(e.css("border-bottom-width")),o+=n(e.css("padding-top"))+n(e.css("padding-bottom"))),e.css(s.property,i-o+"px"))})}),u.each(function(){var e=t(this);e.attr("style",e.data("style-cache")||null)}),r._maintainScroll&&t(window).scrollTop(c/p*t("html").outerHeight(!0)),
+  this},r._applyDataApi=function(){var e={};t("[data-match-height], [data-mh]").each(function(){var o=t(this),n=o.attr("data-mh")||o.attr("data-match-height");n in e?e[n]=e[n].add(o):e[n]=o}),t.each(e,function(){this.matchHeight(!0)})};var s=function(e){r._beforeUpdate&&r._beforeUpdate(e,r._groups),t.each(r._groups,function(){r._apply(this.elements,this.options)}),r._afterUpdate&&r._afterUpdate(e,r._groups)};r._update=function(n,a){if(a&&"resize"===a.type){var i=t(window).width();if(i===e)return;e=i;
+  }n?o===-1&&(o=setTimeout(function(){s(a),o=-1},r._throttle)):s(a)},t(r._applyDataApi);var h=t.fn.on?"on":"bind";t(window)[h]("load",function(t){r._update(!1,t)}),t(window)[h]("resize orientationchange",function(t){r._update(!0,t)})});
+
 // Document ready
 $(document).on('ready', function(){
 
@@ -59,6 +72,7 @@ $(document).on('ready', function(){
     midClick: true,
     showCloseBtn: false,
     closeOnBgClick: false,
+    overflowY: 'scroll',
     callbacks: {
       beforeOpen: function() {
         setTimeout(function(){
@@ -111,6 +125,8 @@ $(document).on('ready', function(){
       }
     ]
   });
+
+  $('.services__row-title').matchHeight();
 
   navigation();
   scrollPage();
@@ -168,6 +184,9 @@ function scrollPage() {
   var scene6Tl = new TimelineMax();
   var scene7Tl = new TimelineMax();
   var scene8Tl = new TimelineMax();
+  var scene9Tl = new TimelineMax();
+  var scene10Tl = new TimelineMax();
+  var scene11Tl = new TimelineMax();
   
   var btn1Tl = new TimelineMax();
   var btn2Tl = new TimelineMax();
@@ -181,8 +200,8 @@ function scrollPage() {
     .fromTo('.home__title', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 'scene1Tl-line1')
     .fromTo('.home__slogan', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
     .fromTo('.home__content', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.header__logo', 1, {autoAlpha: 0, x: '-=25px'}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
-    .fromTo('.body__social', 1, {autoAlpha: 0, x: '-=25px'}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
+    .fromTo('.header__logo', 1, {autoAlpha: 0, x: -25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
+    .fromTo('.body__social', 1, {autoAlpha: 0, x: -25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
     .fromTo('.header__btn', 1, {autoAlpha: 0, x: 25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
     .fromTo('#section-btn1', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, 'scene1Tl-line4')
   ;
@@ -195,7 +214,6 @@ function scrollPage() {
 
   // Btn scrollTo 1
   btn1Tl
-    
     .fromTo('#section-btn1 > span', 0.5, {autoAlpha: 0, height: 0}, {autoAlpha: 1, height: '160px'})
     .fromTo('#section-btn1 > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
     .fromTo('#section-btn1 > span > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
@@ -224,7 +242,8 @@ function scrollPage() {
 
   // Btn scrollTo 2
   btn2Tl
-    .fromTo('#section-btn2', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0});
+    .fromTo('#section-btn2', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+  ;
   var btnScene2 = new ScrollMagic.Scene({
     triggerElement: "#section3",
     triggerHook: 0.9
@@ -232,12 +251,11 @@ function scrollPage() {
     .setTween(btn2Tl)
     .addTo(controller2);
 
-  // Scene 3
-  
+  // Scene 3  
   scene3Tl
     .fromTo('#section3 .section__header', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
     .staggerFromTo( '.services__block', 0.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, 0.25)
-    .fromTo('.services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+    .fromTo('#section3 .services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
   ;
   var scene3 = new ScrollMagic.Scene({
     triggerElement: "#section3",
@@ -247,10 +265,10 @@ function scrollPage() {
     .setTween(scene3Tl)
     .addTo(controller1);
 
-  // Btn scrollTo 3
-  
+  // Btn scrollTo 3  
   btn3Tl
-    .fromTo('#section-btn3', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0});
+    .fromTo('#section-btn3', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+  ;
   var btnScene3 = new ScrollMagic.Scene({
     triggerElement: "#section4",
     triggerHook: 0.9
@@ -260,7 +278,7 @@ function scrollPage() {
 
   // Scene 4
   scene4Tl
-    .fromTo('#section4 .section__header', 1, {autoAlpha: 0, x: '-=50px'}, {autoAlpha: 1, x: 0})
+    .fromTo('#section4 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
     .fromTo('.projects__nav', 1, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
     .fromTo('#section4 .tab-content', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
   ;
@@ -274,7 +292,8 @@ function scrollPage() {
 
   // Btn scrollTo 4
   btn4Tl
-    .fromTo('#section-btn4', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0});
+    .fromTo('#section-btn4', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+  ;
   var btnScene4 = new ScrollMagic.Scene({
     triggerElement: "#section5",
     triggerHook: 0.9
@@ -284,10 +303,10 @@ function scrollPage() {
 
   // Scene 5
   scene5Tl
-    .fromTo('#section5 .section__header', 1.5, {autoAlpha: 0, x: '-=50px'}, {autoAlpha: 1, x: 0})
+    .fromTo('#section5 .section__header', 1.5, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
     .staggerFromTo( '.achievements__block', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
   ;
-  var scene4 = new ScrollMagic.Scene({
+  var scene5 = new ScrollMagic.Scene({
     triggerElement: "#section5",
     triggerHook: 0.5,
     reverse: false
@@ -297,7 +316,8 @@ function scrollPage() {
 
   // Btn scrollTo 5
   btn5Tl
-    .fromTo('#section-btn5', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0});
+    .fromTo('#section-btn5', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+  ;
   var btnScene5 = new ScrollMagic.Scene({
     triggerElement: "#section6",
     triggerHook: 0.9
@@ -307,10 +327,10 @@ function scrollPage() {
 
   // Scene 6
   scene6Tl
-    .fromTo('#section6 .section__header', 1.5, {autoAlpha: 0, x: '-=50px'}, {autoAlpha: 1, x: 0})
-    .staggerFromTo( '.clients__block', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+    .fromTo('#section6 .section__header', 1.5, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+    .staggerFromTo( '.clients__block', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
   ;
-  var scene4 = new ScrollMagic.Scene({
+  var scene6 = new ScrollMagic.Scene({
     triggerElement: "#section6",
     triggerHook: 0.5,
     reverse: false
@@ -336,7 +356,7 @@ function scrollPage() {
   scene7Tl
     .fromTo('.request__block', 1.5, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
   ;
-  var scene4 = new ScrollMagic.Scene({
+  var scene7 = new ScrollMagic.Scene({
     triggerElement: "#section7",
     triggerHook: 0.5,
     reverse: false
@@ -350,12 +370,50 @@ function scrollPage() {
     .fromTo('.footer__center', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     .fromTo('.footer__bottom', 1.5, {autoAlpha: 0}, {autoAlpha: 1})
   ;
-  var scene4 = new ScrollMagic.Scene({
-    triggerElement: ".footer",
+  var scene8 = new ScrollMagic.Scene({
+    triggerElement: "#footer",
     triggerHook: 0.5,
     reverse: false
   })
     .setTween(scene8Tl)
+    .addTo(controller1);
+
+  // Scene 9
+  scene9Tl
+    .fromTo('#section9 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+    .staggerFromTo( '.contacts__block', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+  ;
+  var scene9 = new ScrollMagic.Scene({
+    triggerElement: "#section9",
+    triggerHook: 0.5,
+    reverse: false
+  })
+    .setTween(scene9Tl)
+    .addTo(controller1);
+
+  // Scene 10
+  scene10Tl
+    .fromTo('#section10 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+    .staggerFromTo( '.services__row', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)    
+  ;
+  var scene10 = new ScrollMagic.Scene({
+    triggerElement: "#section10",
+    triggerHook: 0.5,
+    reverse: false
+  })
+    .setTween(scene10Tl)
+    .addTo(controller1);
+
+  // Scene 10
+  scene11Tl
+    .fromTo('#section10 .services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+  ;
+  var scene11 = new ScrollMagic.Scene({
+    triggerElement: "#section10 .services__footer",
+    triggerHook: 0.7,
+    reverse: false
+  })
+    .setTween(scene11Tl)
     .addTo(controller1);
 
   var width = $(window).width();

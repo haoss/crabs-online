@@ -30,7 +30,7 @@
         <meta name="msapplication-TileImage" content="./favicon/mstile-144x144.png">
         <meta name="msapplication-config" content="./favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/a5830d47ad/crabs/style.css">
+        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/835418ba67/crabs/style.css">
         <link rel="stylesheet" href="./css/style.min.css">
     </head>
     <body id="body">
@@ -501,7 +501,7 @@
             </div>
         </div>
         <!-- Footer-->
-        <footer class="footer">
+        <footer class="footer" id="footer">
             <div class="container section__container">
                 <!-- Seo-->
                 <div class="seo">
@@ -542,15 +542,15 @@
                                 </div>
                             </div>
                         </div>
-                        <nav class="footer__navigation">
+                        <nav class="footer__navigation" role="navigation">
                             <ul>
-                                <li><a href="index.html">Главная</a></li>
-                                <li><a href="#!">О нас</a></li>
-                                <li><a href="services.html">Услуги</a></li>
-                                <li><a href="portfolio.html">Портфолио</a></li>
-                                <li><a href="#!">Наши клиенты</a></li>
-                                <li><a href="#!">отзывы</a></li>
-                                <li><a href="contacts.html">контакты</a></li>
+                                <li class="active"><a href="index.html" title="Главная">Главная</a></li>
+                                <li><a href="#!" title="О нас">О нас</a></li>
+                                <li><a href="services.html" title="Услуги">Услуги</a></li>
+                                <li><a href="portfolio.html" title="Портфолио">Портфолио</a></li>
+                                <li><a href="#!" title="Наши клиенты">Наши клиенты</a></li>
+                                <li><a href="#!" title="Отзывы">Отзывы</a></li>
+                                <li><a href="contacts.html" title="Контакты">Контакты</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -622,6 +622,7 @@
         <script src="./js/libs/gsap/TweenMax.min.js"></script>
         <script src="./js/libs/gsap/ScrollMagic.min.js"></script>
         <script src="./js/libs/gsap/animation.gsap.min.js"></script>
+        <script src="./js/libs/gsap/debug.addIndicators.min.js"></script>
         <script src="./js/common.js"></script>
     </body>
 </html>
