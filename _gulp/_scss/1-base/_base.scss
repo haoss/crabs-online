@@ -469,6 +469,7 @@ img, .img {
           left: -170px;
           top: 50%;
           transform: translateY(-50%);
+          @include neon($add-color-1,.5,text);
         }
         i.icon-service-5 {
           font-size: 59px;

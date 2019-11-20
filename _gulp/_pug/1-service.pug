@@ -25,10 +25,47 @@ html(lang="ru")
         .one-service__thumb
           img(src="./tmp/one-service-thumb.png", alt="").img-fluid
 
-        .one-service__content
+        .one-service__content.one-service__content--top
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших, команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат. Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
+
+        .video__thumb
+          a(href="javascript:void(0)").popup-youtube
+            img(src="./tmp/video-thumb.png", alt="")
+
+        .one-service__content
           p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
+
+        .achievements__wrapper
+          .achievements__block
+            .achievements__block-number(data-shadow="84") 
+              span _ 
+              | 84
+            .achievements__block-text Реализованных сайта
+          .achievements__block
+            .achievements__block-number(data-shadow="67") 
+              span _ 
+              | 67
+            .achievements__block-text Успешных компаний по продвижению
+          .achievements__block
+            .achievements__block-number(data-shadow="143") 
+              span _ 
+              | 143
+            .achievements__block-text Успешных компаний по продвижению
+
+        .one-service__content.one-service__content--bottom
+          p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
+          p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
+
+    #section7.section.request.request--inside.pt-0
+      .container.section__container
+
+        .request__block
+          .request__block-icon
+            i.icon-service-9
+          .request__block-content
+            p Закажите просчет на проект сегодня и получите одну из дополнительных услуг* бесплатно
+            a(href="#feedback").more.open-popup-link  заявка на просчет
 
     include ./_include/_footer
     //- div(style="height: 1000px; background-color: #000")
