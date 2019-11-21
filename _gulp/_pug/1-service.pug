@@ -14,7 +14,7 @@ html(lang="ru")
 
     include ./_include/_header
 
-    #section11.section.section--top.one-service
+    #section12.section.section--top.one-service
       .container.section__container
 
         .section__header.section__header--one-service
@@ -32,7 +32,7 @@ html(lang="ru")
           a(href="javascript:void(0)").popup-youtube
             img(src="./tmp/video-thumb.png", alt="")
 
-        .one-service__content
+        .one-service__content.one-service__content--center
           p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
 
@@ -57,15 +57,18 @@ html(lang="ru")
           p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
 
-    #section7.section.request.request--inside.pt-0
+    #section7.section.request.request--inside
       .container.section__container
 
-        .request__block
+        .request__block.request__block--inside
           .request__block-icon
             i.icon-service-9
           .request__block-content
             p Закажите просчет на проект сегодня и получите одну из дополнительных услуг* бесплатно
             a(href="#feedback").more.open-popup-link  заявка на просчет
+
+        a(href="services.html").btn.btn--1-service Вернуться к полному списку услуг
+
 
     include ./_include/_footer
     //- div(style="height: 1000px; background-color: #000")

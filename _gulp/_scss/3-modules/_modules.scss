@@ -385,9 +385,6 @@
       i {
         display: block;
         @include neon($add-color-1,.5,text);
-        &.icon-service-5 {
-          font-size: 69px;
-        }
       }
     }
     p {
@@ -798,6 +795,7 @@
     mask-position: top center;
   }
   &--inside {
+    padding-top: 0;
     &::before {
       background-color: #171717;
     }
@@ -813,7 +811,9 @@
     color: $color-white;
     display: flex;
     position: relative;
-    
+    &--inside {
+      margin-bottom: 120px;
+    }
     p {
       font-size: 30px;
       line-height: 1.3;

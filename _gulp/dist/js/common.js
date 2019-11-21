@@ -129,7 +129,7 @@ $(document).on('ready', function(){
   $('.services__row-title').matchHeight();
 
   navigation();
-  scrollPage();
+  // scrollPage();
   btnUp();
 
   //Chrome Smooth Scroll
@@ -145,6 +145,8 @@ $(document).on('ready', function(){
 
 $(window).on('load', function() {
   $(".loader").delay(400).fadeOut("slow");
+
+  scrollPage();
 });
 
 $(window).on('scroll', function() {
@@ -176,34 +178,32 @@ function scrollPage() {
   var controller1 = new ScrollMagic.Controller();
   var controller2 = new ScrollMagic.Controller();
   
-  var scene1Tl = new TimelineMax();
-  var scene2Tl = new TimelineMax();
-  var scene3Tl = new TimelineMax();
-  var scene4Tl = new TimelineMax();
-  var scene5Tl = new TimelineMax();
-  var scene6Tl = new TimelineMax();
-  var scene7Tl = new TimelineMax();
-  var scene8Tl = new TimelineMax();
-  var scene9Tl = new TimelineMax();
-  var scene10Tl = new TimelineMax();
-  var scene11Tl = new TimelineMax();
+  var scene1Tl = gsap.timeline();
+  var scene2Tl = gsap.timeline();
+  var scene3Tl = gsap.timeline();
+  var scene4Tl = gsap.timeline();
+  var scene5Tl = gsap.timeline();
+  var scene6Tl = gsap.timeline();
+  var scene7Tl = gsap.timeline();
+  var scene8Tl = gsap.timeline();
+  var scene9Tl = gsap.timeline();
+  var scene10Tl = gsap.timeline();
+  var scene11Tl = gsap.timeline();
+  var scene12Tl = gsap.timeline();
+  var scene13Tl = gsap.timeline();
+  var scene14Tl = gsap.timeline();
   
-  var btn1Tl = new TimelineMax();
-  var btn2Tl = new TimelineMax();
-  var btn3Tl = new TimelineMax();
-  var btn4Tl = new TimelineMax();
-  var btn5Tl = new TimelineMax();
-  var btn6Tl = new TimelineMax();
+  var btn1Tl = gsap.timeline();
+  var btn6Tl = gsap.timeline();
 
   // Scene 1
   scene1Tl
-    .fromTo('.home__title', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 'scene1Tl-line1')
-    .fromTo('.home__slogan', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.home__content', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.header__logo', 1, {autoAlpha: 0, x: -25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
-    .fromTo('.body__social', 1, {autoAlpha: 0, x: -25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
-    .fromTo('.header__btn', 1, {autoAlpha: 0, x: 25}, {autoAlpha: 1, x: 0}, 'scene1Tl-line3')
-    .fromTo('#section-btn1', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, 'scene1Tl-line4')
+    .from('.home__title', {duration: 1.5, autoAlpha: 0, y: 50}, 'scene1Tl-line1')
+    .from('.home__slogan', {duration: 1, autoAlpha: 0, y: 25}, '-=0.5')
+    .from('.home__content', {duration: 1, autoAlpha: 0, y: 25}, '-=0.5')
+    .from('.header__logo', {duration: 1, autoAlpha: 0, x: -25}, 'scene1Tl-line3')
+    .from('.body__social', {duration: 1, autoAlpha: 0, x: -25}, 'scene1Tl-line3')
+    .from('.header__btn', {duration: 1, autoAlpha: 0, x: 25}, 'scene1Tl-line3')
   ;
   var scene1 = new ScrollMagic.Scene({
     triggerElement: "#section1",
@@ -214,9 +214,10 @@ function scrollPage() {
 
   // Btn scrollTo 1
   btn1Tl
-    .fromTo('#section-btn1 > span', 0.5, {autoAlpha: 0, height: 0}, {autoAlpha: 1, height: '160px'})
-    .fromTo('#section-btn1 > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
-    .fromTo('#section-btn1 > span > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('#section-btn1', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
+    .fromTo('#section-btn1 > span', {autoAlpha: 0, height: 0}, {duration: 0.5, autoAlpha: 1, height: '160px'})
+    .fromTo('#section-btn1 > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
+    .fromTo('#section-btn1 > span > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
   ;  
   var btnScene1 = new ScrollMagic.Scene({
     triggerElement: "#section2",
@@ -225,12 +226,26 @@ function scrollPage() {
     .setTween(btn1Tl)
     .addTo(controller2);
 
+  // Btn scrollTo 6
+  btn6Tl
+    .fromTo('#section-btn6', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
+    .fromTo('#section-btn6 > span', {autoAlpha: 0, height: 0}, {duration: 0.5, autoAlpha: 1, height: '160px'})
+    .fromTo('#section-btn6 > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
+    .fromTo('#section-btn6 > span > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
+  ;
+  var btnScene6 = new ScrollMagic.Scene({
+    triggerElement: "#section7",
+    triggerHook: 0.9
+  })
+    .setTween(btn6Tl)
+    .addTo(controller2);
+
   // Scene 2
   scene2Tl
-    .fromTo('#about__container .section__header', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
-    .fromTo('.about__slogan', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.about__content', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.section__text--2', 1, {autoAlpha: 0}, {autoAlpha: 0.06})
+    .fromTo('#about__container .section__header', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+    .fromTo('.about__slogan', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo('.about__content', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
+    .fromTo('.section__text--2', {autoAlpha: 0}, {duration: 1, autoAlpha: 0.06})
   ;
   var scene2 = new ScrollMagic.Scene({
     triggerElement: "#section2",
@@ -240,22 +255,11 @@ function scrollPage() {
     .setTween(scene2Tl)
     .addTo(controller1);
 
-  // Btn scrollTo 2
-  btn2Tl
-    .fromTo('#section-btn2', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
-  ;
-  var btnScene2 = new ScrollMagic.Scene({
-    triggerElement: "#section3",
-    triggerHook: 0.9
-  })
-    .setTween(btn2Tl)
-    .addTo(controller2);
-
   // Scene 3  
   scene3Tl
-    .fromTo('#section3 .section__header', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
-    .staggerFromTo( '.services__block', 0.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, 0.25)
-    .fromTo('#section3 .services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+    .fromTo('#section3 .section__header', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
+    .fromTo( '.services__block', {autoAlpha: 0, y: 25}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+    .fromTo('#section3 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
   ;
   var scene3 = new ScrollMagic.Scene({
     triggerElement: "#section3",
@@ -265,22 +269,11 @@ function scrollPage() {
     .setTween(scene3Tl)
     .addTo(controller1);
 
-  // Btn scrollTo 3  
-  btn3Tl
-    .fromTo('#section-btn3', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
-  ;
-  var btnScene3 = new ScrollMagic.Scene({
-    triggerElement: "#section4",
-    triggerHook: 0.9
-  })
-    .setTween(btn3Tl)
-    .addTo(controller2);
-
   // Scene 4
   scene4Tl
-    .fromTo('#section4 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
-    .fromTo('.projects__nav', 1, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
-    .fromTo('#section4 .tab-content', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+    .fromTo('#section4 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+    .fromTo('.projects__nav', {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0})
+    .fromTo('#section4 .tab-content', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
   ;
   var scene4 = new ScrollMagic.Scene({
     triggerElement: "#section4",
@@ -290,21 +283,10 @@ function scrollPage() {
     .setTween(scene4Tl)
     .addTo(controller1);
 
-  // Btn scrollTo 4
-  btn4Tl
-    .fromTo('#section-btn4', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
-  ;
-  var btnScene4 = new ScrollMagic.Scene({
-    triggerElement: "#section5",
-    triggerHook: 0.9
-  })
-    .setTween(btn4Tl)
-    .addTo(controller2);
-
   // Scene 5
   scene5Tl
-    .fromTo('#section5 .section__header', 1.5, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
-    .staggerFromTo( '.achievements__block', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+    .fromTo('#section5 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
+    .fromTo( '#section5 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
   ;
   var scene5 = new ScrollMagic.Scene({
     triggerElement: "#section5",
@@ -314,21 +296,10 @@ function scrollPage() {
     .setTween(scene5Tl)
     .addTo(controller1);
 
-  // Btn scrollTo 5
-  btn5Tl
-    .fromTo('#section-btn5', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
-  ;
-  var btnScene5 = new ScrollMagic.Scene({
-    triggerElement: "#section6",
-    triggerHook: 0.9
-  })
-    .setTween(btn5Tl)
-    .addTo(controller2);
-
   // Scene 6
   scene6Tl
-    .fromTo('#section6 .section__header', 1.5, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
-    .staggerFromTo( '.clients__block', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+    .fromTo('#section6 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
+    .fromTo( '.clients__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
   ;
   var scene6 = new ScrollMagic.Scene({
     triggerElement: "#section6",
@@ -338,23 +309,10 @@ function scrollPage() {
     .setTween(scene6Tl)
     .addTo(controller1);
 
-  // Btn scrollTo 6
-  btn6Tl
-    .fromTo('#section-btn6', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
-    .fromTo('#section-btn6 > span', 0.5, {autoAlpha: 0, height: 0}, {autoAlpha: 1, height: '160px'})
-    .fromTo('#section-btn6 > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
-    .fromTo('#section-btn6 > span > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
-  ;
-  var btnScene6 = new ScrollMagic.Scene({
-    triggerElement: "#section7",
-    triggerHook: 0.9
-  })
-    .setTween(btn6Tl)
-    .addTo(controller2);
-
   // Scene 7
   scene7Tl
-    .fromTo('.request__block', 1.5, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
+    .fromTo('#section7 .request__block', {autoAlpha: 0, x: 50}, {duration: 1.5, autoAlpha: 1, x: 0})
+    .fromTo('#section7 .btn--1-service', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
   ;
   var scene7 = new ScrollMagic.Scene({
     triggerElement: "#section7",
@@ -366,9 +324,9 @@ function scrollPage() {
 
   // Scene 8
   scene8Tl
-    .fromTo('.seo', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
-    .fromTo('.footer__center', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
-    .fromTo('.footer__bottom', 1.5, {autoAlpha: 0}, {autoAlpha: 1})
+    .fromTo('.seo', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+    .fromTo('.footer__center', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+    .fromTo('.footer__bottom', {autoAlpha: 0}, {duration: 1.5, autoAlpha: 1})
   ;
   var scene8 = new ScrollMagic.Scene({
     triggerElement: "#footer",
@@ -380,8 +338,8 @@ function scrollPage() {
 
   // Scene 9
   scene9Tl
-    .fromTo('#section9 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
-    .staggerFromTo( '.contacts__block', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+    .fromTo('#section9 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+    .fromTo( '.contacts__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
   ;
   var scene9 = new ScrollMagic.Scene({
     triggerElement: "#section9",
@@ -393,8 +351,8 @@ function scrollPage() {
 
   // Scene 10
   scene10Tl
-    .fromTo('#section10 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
-    .staggerFromTo( '.services__row', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)    
+    .fromTo('#section10 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+    .fromTo( '.services__row', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
   ;
   var scene10 = new ScrollMagic.Scene({
     triggerElement: "#section10",
@@ -404,9 +362,9 @@ function scrollPage() {
     .setTween(scene10Tl)
     .addTo(controller1);
 
-  // Scene 10
+  // Scene 11
   scene11Tl
-    .fromTo('#section10 .services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+    .fromTo('#section10 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
   ;
   var scene11 = new ScrollMagic.Scene({
     triggerElement: "#section10 .services__footer",
@@ -414,6 +372,46 @@ function scrollPage() {
     reverse: false
   })
     .setTween(scene11Tl)
+    .addTo(controller1);
+
+  // Scene 12
+  scene12Tl
+    .fromTo('#section12 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+    .fromTo('#section12 .one-service__thumb', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+  ;
+  var scene12 = new ScrollMagic.Scene({
+    triggerElement: "#section12",
+    triggerHook: 0.5,
+    reverse: false
+  })
+    .setTween(scene12Tl)
+    .addTo(controller1);
+
+  // Scene 13
+  scene13Tl
+    .fromTo('#section12 .one-service__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+    .fromTo('#section12 .video__thumb', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 0.5, y: 0})
+    .fromTo('#section12 .one-service__content--center', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+  ;
+  var scene13 = new ScrollMagic.Scene({
+    triggerElement: "#section12 .one-service__content--top",
+    triggerHook: 0.5,
+    reverse: false
+  })
+    .setTween(scene13Tl)
+    .addTo(controller1);
+
+  // Scene 14
+  scene14Tl
+    .fromTo( '#section12 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
+    .fromTo('#section12 .one-service__content--bottom', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+  ;
+  var scene14 = new ScrollMagic.Scene({
+    triggerElement: "#section12 .achievements__wrapper",
+    triggerHook: 0.5,
+    reverse: false
+  })
+    .setTween(scene14Tl)
     .addTo(controller1);
 
   var width = $(window).width();

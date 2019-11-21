@@ -1,0 +1,31 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Портфолио' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Портфолио' + ' - Crabs Agency' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body#body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    #section9.section.section--top.contacts
+      .container.section__container
+        .section__text.section__text--7 портфолио
+
+        .section__header.section__header--big
+          .h1 Портфолио
+
+
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

@@ -9,8 +9,8 @@ button {
 
 .btn {
   display: inline-block;
-  height: 76px;
-  line-height: 67px;
+  height: 68px;
+  line-height: 60px;
   color: $color-white;
   text-decoration: none;
   font-size: 16px;
@@ -20,6 +20,7 @@ button {
   min-width: 257px;
   border-radius: 50px;
   font-family: $font-ubuntu;
+  padding: 0 25px;
   transition: background 0.35s, box-shadow 0.35s, color 0.35s, border 0.35s;
   &:hover {
     color: $color-white;
@@ -60,6 +61,12 @@ button {
         @include neon($add-color-2,0);
       }
     }
+  }
+  &--1-service {
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+    display: block;
   }
   &--block {
     display: block;

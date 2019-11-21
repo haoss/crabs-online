@@ -753,6 +753,17 @@
         left: 50%;
       }
     }
+    &__header {
+      &--one-service {
+        padding-left: 80px;
+        &>h1, &>.h1, &>h2, &>.h2 {
+          .icon-service-3 {
+            font-size: 60px;
+            left: -80px;
+          }
+        }
+      }
+    }
   }
   .services {
     padding-bottom: 145px;
@@ -790,9 +801,6 @@
         left: -30px;
         font-size: 60px;
         top: 40px;
-        i.icon-service-5 {
-          font-size: 45px;
-        }
       }
     }
   }
@@ -825,6 +833,11 @@
   }
   .request {
     padding-top: 115px;
+    &__block {
+      &--inside {
+        margin-bottom: 75px;
+      }
+    }
   }
 }
 
@@ -991,15 +1004,26 @@
       font-size: 130px;
     }
     &__header {
-      padding-left: 30px;
       &>.h1, &>h1, &>.h2, &>h2 {
         font-size: 21px;
-        &::before {
-          width: 13px;
-          height: 16px;
-          background-size: 13px 16px;
-          margin-top: 6px;
-          margin-left: -30px;
+      }
+      &:not([class*="--one-service"]) {
+        padding-left: 30px;
+        &>.h1, &>h1, &>.h2, &>h2 {
+          &::before {
+            width: 13px;
+            height: 16px;
+            background-size: 13px 16px;
+            margin-top: 6px;
+            margin-left: -30px;
+          }
+        }
+      }
+      &--one-service {
+        &>.h1, &>h1, &>.h2, &>h2 {
+          .icon-service-3 {
+            font-size: 50px;
+          }
         }
       }
     }
@@ -1023,6 +1047,9 @@
   .request {
     padding-bottom: 45px;
     padding-top: 145px;
+    &--inside {
+      margin-top: -80px;
+    }
     &__block {
       margin-left: 0;
       padding: 70px 25px 25px 25px;
@@ -1090,6 +1117,7 @@
       }
     }
   }
+
 }
 
 @media only screen and (max-width: 319px) {}
