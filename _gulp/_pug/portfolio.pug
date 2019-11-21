@@ -14,12 +14,71 @@ html(lang="ru")
 
     include ./_include/_header
 
-    #section9.section.section--top.contacts
+    #section9.section.section--top
       .container.section__container
         .section__text.section__text--7 портфолио
 
         .section__header.section__header--big
           .h1 Портфолио
+
+        ul.nav.projects__nav#projectsTab(role='tablist')
+          li.projects__nav-item
+            a.projects__nav-link.active#1-tab(data-toggle='tab' href='#tab1' role='tab' aria-controls='tab1' aria-selected='true') Все 
+              span.color--add1 (53)
+          li.projects__nav-item
+            a.projects__nav-link#2-tab(data-toggle='tab' href='#tab2' role='tab' aria-controls='tab2' aria-selected='false') Сайты 
+              span.color--add1 (78)
+          li.projects__nav-item
+            a.projects__nav-link#3-tab(data-toggle='tab' href='#tab3' role='tab' aria-controls='tab3' aria-selected='false') Seo 
+              span.color--add1 (22)
+          li.projects__nav-item
+            a.projects__nav-link#4-tab(data-toggle='tab' href='#tab4' role='tab' aria-controls='tab4' aria-selected='false') Продакшн 
+              span.color--add1 (34)
+
+        .tab-content
+          .tab-pane.fade.active.show#tab1(role='tabpanel' aria-labelledby='1-tab')
+            mixin projectsBlock(name, description, img)
+              .projects__block.projects__block--list
+                .projects__block-wrapper
+                  .projects__block-text
+                    .projects__block-title= name
+                    .projects__block-description= description
+                    a(href="1-project.html").more Подробнее
+                  .projects__block-img
+                    a(href="#!")
+                      img(src= img, alt="")
+
+            .projects__list
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+              +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+
+          .tab-pane.fade#tab2(role='tabpanel' aria-labelledby='2-tab')
+            .projects__list
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+              +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+              +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+
+          .tab-pane.fade#tab3(role='tabpanel' aria-labelledby='3-tab')
+            .projects__list
+              +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+              +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+
+          .tab-pane.fade#tab4(role='tabpanel' aria-labelledby='4-tab')
+            .projects__list
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
+              +projectsBlock('Nowy Styl', 'промо-сайт', './tmp/portfolio-3-big.jpg')
+              +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big.jpg')
+              +projectsBlock('Nike', 'промо-сайт', './tmp/portfolio-2-big.jpg')
 
 
     include ./_include/_footer

@@ -220,7 +220,7 @@ img, .img {
   top: 0;
   position: fixed;
   z-index: 10000;
-  background-color: #1e1e1e;
+  background-color: $color-white;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -326,7 +326,7 @@ img, .img {
       line-height: 1;
     }
     &>span {
-      width: 1px;
+      width: 2px;
       left: 50%;
       background: $add-color-2;
       top: 100%;
