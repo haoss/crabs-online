@@ -30,7 +30,6 @@
         <meta name="msapplication-TileImage" content="./favicon/mstile-144x144.png">
         <meta name="msapplication-config" content="./favicon/browserconfig.xml">
         <meta name="theme-color" content="#ffffff">
-        <link rel="stylesheet" href="https://i.icomoon.io/public/temp/77fb15818b/crabs/style.css">
         <link rel="stylesheet" href="./css/style.min.css">
     </head>
     <body id="body">
@@ -64,7 +63,7 @@
                 <div class="one-page__thumb">
                     <picture>
                         <source srcset="./tmp/one-service-thumb.webp" type="image/webp">
-                        <source srcset="./tmp/one-service-thumb.png" type="image/png"><img class="img-fluid" src="./tmp/one-service-thumb.png" alt="">
+                        <source srcset="./tmp/one-service-thumb.png" type="image/png"><img class="img-fluid lazyload" data-src="./tmp/one-service-thumb.png" alt="">
                     </picture>
                 </div>
                 <div class="one-page__content one-page__content--top">
@@ -73,7 +72,7 @@
                 <div class="video__thumb"><a class="popup-youtube" href="javascript:void(0)">
                         <picture>
                             <source srcset="./tmp/video-thumb.webp" type="image/webp">
-                            <source srcset="./tmp/video-thumb.png" type="image/png"><img class="img-fluid" src="./tmp/video-thumb.png" alt="">
+                            <source srcset="./tmp/video-thumb.png" type="image/png"><img class="img-fluid lazyload" data-src="./tmp/video-thumb.png" alt="">
                         </picture></a></div>
                 <div class="one-page__content one-page__content--center">
                     <p>Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.</p>
@@ -228,6 +227,7 @@
         <script src="./js/libs/smooth-scroll/smooth-scroll.min.js"></script>
         <script src="./js/libs/bootstrap/bootstrap.min.js"></script>
         <script src="./js/libs/slick/slick.min.js"></script>
+        <script src="./js/libs/lazysizes/lazysizes.min.js"></script>
         <script src="./js/libs/gsap/gsap-latest-beta.min.js"></script>
         <script src="./js/libs/gsap/ScrollMagic.min.js"></script>
         <script src="./js/libs/gsap/animation.gsap.min.js"></script>

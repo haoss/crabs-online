@@ -5,6 +5,7 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
+  font-display: block;
   font-weight: 400;
   src: url('../fonts/montserrat/montserrat-v14-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
   src: local('Montserrat Regular'), local('Montserrat-Regular'),
@@ -18,6 +19,7 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: italic;
+  font-display: block;
   font-weight: 400;
   src: url('../fonts/montserrat/montserrat-v14-latin_cyrillic-italic.eot'); /* IE9 Compat Modes */
   src: local('Montserrat Italic'), local('Montserrat-Italic'),
@@ -31,6 +33,7 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: normal;
+  font-display: block;
   font-weight: 700;
   src: url('../fonts/montserrat/montserrat-v14-latin_cyrillic-700.eot'); /* IE9 Compat Modes */
   src: local('Montserrat Bold'), local('Montserrat-Bold'),
@@ -44,6 +47,7 @@
 @font-face {
   font-family: 'Montserrat';
   font-style: italic;
+  font-display: block;
   font-weight: 700;
   src: url('../fonts/montserrat/montserrat-v14-latin_cyrillic-700italic.eot'); /* IE9 Compat Modes */
   src: local('Montserrat Bold Italic'), local('Montserrat-BoldItalic'),
@@ -58,6 +62,7 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
+  font-display: block;
   font-weight: 400;
   src: url('../fonts/ubuntu/ubuntu-v14-latin_cyrillic-regular.eot'); /* IE9 Compat Modes */
   src: local('Ubuntu Regular'), local('Ubuntu-Regular'),
@@ -71,6 +76,7 @@
 @font-face {
   font-family: 'Ubuntu';
   font-style: normal;
+  font-display: block;
   font-weight: 500;
   src: url('../fonts/ubuntu/ubuntu-v14-latin_cyrillic-500.eot'); /* IE9 Compat Modes */
   src: local('Ubuntu Medium'), local('Ubuntu-Medium'),
@@ -79,4 +85,114 @@
        url('../fonts/ubuntu/ubuntu-v14-latin_cyrillic-500.woff') format('woff'), /* Modern Browsers */
        url('../fonts/ubuntu/ubuntu-v14-latin_cyrillic-500.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/ubuntu/ubuntu-v14-latin_cyrillic-500.svg#Ubuntu') format('svg'); /* Legacy iOS */
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src:  url('../fonts/icomoon/fonts/icomoon.eot?wo4bh2');
+  src:  url('../fonts/icomoon/fonts/icomoon.eot?wo4bh2#iefix') format('embedded-opentype'),
+    url('../fonts/icomoon/fonts/icomoon.woff2?wo4bh2') format('woff2'), /* Super Modern Browsers */
+    url('../fonts/icomoon/fonts/icomoon.ttf?wo4bh2') format('truetype'),
+    url('../fonts/icomoon/fonts/icomoon.woff?wo4bh2') format('woff'),
+    url('../fonts/icomoon/fonts/icomoon.svg?wo4bh2#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-link:before {
+  content: "\1f517";
+}
+.icon-checkmark:before {
+  content: "\1f5f8";
+}
+.icon-brand-telegram:before {
+  content: "\1f584";
+}
+.icon-icon-play:before {
+  content: "\1f3ae";
+}
+.icon-arrow-left:before {
+  content: "\1f448";
+}
+.icon-arrow-right:before {
+  content: "\1f449";
+}
+.icon-service-1:before {
+  content: "\1f550";
+}
+.icon-service-2:before {
+  content: "\1f551";
+}
+.icon-service-3:before {
+  content: "\1f552";
+}
+.icon-service-4:before {
+  content: "\1f553";
+}
+.icon-service-5:before {
+  content: "\1f554";
+}
+.icon-service-6:before {
+  content: "\1f555";
+}
+.icon-service-7:before {
+  content: "\1f556";
+}
+.icon-service-8:before {
+  content: "\1f557";
+}
+.icon-service-9:before {
+  content: "\1f558";
+}
+.icon-close:before {
+  content: "\1f5d9";
+}
+.icon-down:before {
+  content: "\1f53b";
+}
+.icon-up:before {
+  content: "\1f53a";
+}
+.icon-twitter:before {
+  content: "\f099";
+}
+.icon-facebook:before {
+  content: "\f09a";
+}
+.icon-facebook-f:before {
+  content: "\f09a";
+}
+.icon-google-plus:before {
+  content: "\f0d5";
+}
+.icon-youtube-play:before {
+  content: "\f16a";
+}
+.icon-instagram:before {
+  content: "\f16d";
+}
+.icon-skype:before {
+  content: "\f17e";
+}
+.icon-vk:before {
+  content: "\f189";
+}
+.icon-telegram:before {
+  content: "\f2c6";
 }

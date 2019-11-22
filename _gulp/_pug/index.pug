@@ -125,7 +125,7 @@ html(lang="ru")
                   picture.projects__block-img
                     source(srcset= img + '.webp', type="image/webp")
                     source(srcset= img + '.jpg', type="image/jpeg")
-                    img(src= img + '.jpg', alt="")
+                    img(data-lazy= img + '.jpg', alt="")
 
           .projects__carousel
             +projectsBlock('Adidas', 'промо-сайт', './tmp/portfolio-1-big')
@@ -194,7 +194,7 @@ html(lang="ru")
           picture.clients__block
             source(srcset= img + '.webp', type="image/webp")
             source(srcset= img + '.png', type="image/png")
-            img(src= img + '.png', alt="")
+            img(alt="" data-src= img + '.png').lazyload
 
         .clients__wrapper
           +clientBlock('./tmp/client-img-1')

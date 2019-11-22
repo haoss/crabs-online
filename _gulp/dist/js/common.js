@@ -70,6 +70,7 @@ $(document).on('ready', function(){
     centerPadding: '380px',
     infinite: false,
     dots: false,
+    lazyLoad: 'ondemand',
     responsive: [
       {
         breakpoint: 1520,
@@ -425,7 +426,7 @@ function scrollPage() {
     .setTween(scene17Tl)
     .addTo(controller1);
 
-  console.clear();
+  // console.clear();
 
   var width = $(window).width();
 
