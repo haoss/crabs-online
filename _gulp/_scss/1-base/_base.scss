@@ -220,7 +220,7 @@ img, .img {
   top: 0;
   position: fixed;
   z-index: 10000;
-  background-color: $color-white;
+  background-color: #1e1e1e;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -394,6 +394,10 @@ img, .img {
     &--8 {
       left: inherit;
       transform: translate(-300px,15px);
+    }
+    &--9 {
+      left: inherit;
+      transform: translate(-220px,15px);
     }
   }
   &__container {

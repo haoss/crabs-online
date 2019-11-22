@@ -14,7 +14,7 @@ html(lang="ru")
 
     include ./_include/_header
 
-    #section12.section.section--top.one-service
+    #section12.section.section--top.one-page
       .container.section__container
 
         .section__header.section__header--one-service
@@ -22,17 +22,23 @@ html(lang="ru")
             i.icon-service-3
             | Настройка рекламы
 
-        .one-service__thumb
-          img(src="./tmp/one-service-thumb.png", alt="").img-fluid
+        .one-page__thumb
+          picture
+            source(srcset="./tmp/one-service-thumb.webp" type="image/webp")
+            source(srcset="./tmp/one-service-thumb.png" type="image/png")
+            img(src="./tmp/one-service-thumb.png", alt="").img-fluid
 
-        .one-service__content.one-service__content--top
+        .one-page__content.one-page__content--top
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших, команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат. Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
 
         .video__thumb
           a(href="javascript:void(0)").popup-youtube
-            img(src="./tmp/video-thumb.png", alt="")
+            picture
+              source(srcset="./tmp/video-thumb.webp" type="image/webp")
+              source(srcset="./tmp/video-thumb.png" type="image/png")
+              img(src="./tmp/video-thumb.png", alt="").img-fluid
 
-        .one-service__content.one-service__content--center
+        .one-page__content.one-page__content--center
           p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
 
@@ -53,7 +59,7 @@ html(lang="ru")
               | 143
             .achievements__block-text Успешных компаний по продвижению
 
-        .one-service__content.one-service__content--bottom
+        .one-page__content.one-page__content--bottom
           p Команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
           p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
 

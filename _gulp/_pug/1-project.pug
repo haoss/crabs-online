@@ -1,0 +1,82 @@
+doctype
+
+html(lang="ru")
+
+  -var active = 'Портфолио' //активный пункт меню, список в header.jade
+  -var pageTitle = 'Промо-сайт для Adidas' + ' - Crabs Agency' //title страницы для генерации верстки
+
+  include ./_include/_head
+
+  body#body
+
+    // Preloader
+    include ./_include/_preloader
+
+    include ./_include/_header
+
+    #section15.section.section--top.one-page
+      .container.section__container
+        .section__text.section__text--9 проект
+
+        .section__header
+          h1 Промо-сайт для Adidas
+
+        .one-page__thumb.one-page__thumb--top
+          picture
+            source(srcset="./tmp/one-service-thumb.webp" type="image/webp")
+            source(srcset="./tmp/one-service-thumb.png" type="image/png")
+            img(src="./tmp/one-service-thumb.png", alt="").img-fluid
+
+        .one-page__content.one-page__content--top
+          p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших, команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат. Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
+
+        .one-project__gallery
+          div
+            a(href="./tmp/one-gallery-1.png").one-project__img.image-popup
+              picture
+                source(srcset="./tmp/one-gallery-1.webp" type="image/webp")
+                source(srcset="./tmp/one-gallery-1.png" type="image/png")
+                img(src="./tmp/one-gallery-1.png", alt="").img-fluid
+          div
+            a(href="./tmp/one-gallery-2.png").one-project__img.image-popup
+              picture
+                source(srcset="./tmp/one-gallery-2.webp" type="image/webp")
+                source(srcset="./tmp/one-gallery-2.png" type="image/png")
+                img(src="./tmp/one-gallery-2.png", alt="").img-fluid
+          div
+            a(href="./tmp/one-gallery-3.png").one-project__img.image-popup
+              picture
+                source(srcset="./tmp/one-gallery-3.webp" type="image/webp")
+                source(srcset="./tmp/one-gallery-3.png" type="image/png")
+                img(src="./tmp/one-gallery-3.png", alt="").img-fluid
+
+        .one-page__content.one-page__content--one-project
+          p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших, команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
+          p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших. команда для тех, кто наработался в компаниях знает все подводные камни и готов работать на результат.
+          p Мы мощная команда фриансеров, тоесть клиенту не нужно доплачивать за наш комфорт, команда лучших.
+
+        .one-page__thumb.one-page__thumb--bottom
+          picture
+            source(srcset="./tmp/one-service-thumb-2.webp" type="image/webp")
+            source(srcset="./tmp/one-service-thumb-2.png" type="image/png")
+            img(src="./tmp/one-service-thumb-2.png", alt="").img-fluid
+
+        .one-project__info
+          p Ссылка на живой проект:
+          p
+            a(href="#!" target="_blank") adidaspromo.com
+              i.icon-link
+
+        .projects__footer
+          div
+            a(href="portfolio.html").btn Вернуться к полному списку проектов
+          div
+            a(href="#feedback").more.open-popup-link заявка на просчет
+
+    include ./_include/_footer
+    //- div(style="height: 1000px; background-color: #000")
+
+    // Load Scripts
+    include ./_include/_footer-js
+    script(src="./js/common.js")
+

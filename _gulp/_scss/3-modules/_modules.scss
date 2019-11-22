@@ -560,7 +560,6 @@
     &-img {
       flex-grow: 1;
       transition: all 0.35s;
-      overflow: hidden;
       img {
         width: 937px;
         height: 787px;
@@ -578,8 +577,7 @@
         &-img {
           background: $color-black;
           img {
-            width: 100%;
-            height: 318px;
+            width: 100%;            
             filter: grayscale(1);
             opacity: 0.2;
           }
@@ -602,10 +600,12 @@
           padding-right: 85px;
         }
         &-img {
+          overflow: hidden;
           img {
             transform: scale(1);
             opacity: 1;
             filter: grayscale(0);
+            height: 318px;
           }
           &:hover {
             img {
@@ -666,11 +666,25 @@
     bottom: 200px;
     left: 112px;
   }
+  &__footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 85px;
+    &>div {
+      &+div {
+        margin-left: 205px;
+      }
+    }
+  }
 }
 
 .tab-content {
   position: relative;
   z-index: 15;
+  &--portfolio {
+    margin-bottom: -85px;
+  }
   &>.tab-pane {
     display: block;
     height: 0;
@@ -1069,7 +1083,7 @@
   }
 }
 
-.one-service {
+.one-page {
   height: auto;
   min-height: inherit;
   &__thumb {
@@ -1112,6 +1126,9 @@
           }
         }
       }
+    }
+    &--one-project {
+      margin-bottom: 90px;
     }
   }
 }
@@ -1168,6 +1185,62 @@
         bottom: 0;
         left: 0;
         z-index: 10;
+      }
+    }
+  }
+}
+
+.one-project {
+  &__gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 0 -15px 50px -15px;
+    &>div {
+      width: 33.3%;
+      padding: 0 15px;
+    }
+  }
+  &__img {
+    display: block;
+    margin-bottom: 25px;
+    overflow: hidden;
+    img {
+      display: block;
+      transform: scale(1);
+      transition: all 0.35s;
+    }
+    &:hover {
+      img {
+        transform: scale(1.1);
+      }
+    }
+  }
+  &__info {
+    text-align: center;
+    font-weight: 500;
+    font-size: 20px;
+    margin-bottom: 130px;
+    p {
+      margin-bottom: 20px;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    a {
+      font-weight: bold;
+      text-decoration: none;
+      font-weight: 700;
+      color: $add-color-1;
+      font-size: 24px;
+      &:hover {
+        @include neon($add-color-1,.5,text);
+      }
+      i {
+        position: relative;
+        margin-left: 5px;
+        top: 5px;
+        font-size: 30px;
       }
     }
   }
