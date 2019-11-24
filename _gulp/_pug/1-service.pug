@@ -73,7 +73,12 @@ html(lang="ru")
             p Закажите просчет на проект сегодня и получите одну из дополнительных услуг* бесплатно
             a(href="#feedback").more.open-popup-link  заявка на просчет
 
-        a(href="services.html").btn.btn--1-service Вернуться к полному списку услуг
+        .text-center
+          .d-none.d-sm-block
+            a(href="services.html").btn.btn--1-service Вернуться к полному списку услуг
+          .d-sm-none
+            a(href="services.html").btn К списку услуг
+        
 
 
     include ./_include/_footer

@@ -67,9 +67,12 @@ html(lang="ru")
             a(href="#!" target="_blank") adidaspromo.com
               i.icon-link
 
-        .projects__footer
+        .projects__footer.projects__footer--one-project
           div
-            a(href="portfolio.html").btn Вернуться к полному списку проектов
+            .d-none.d-sm-block
+              a(href="portfolio.html").btn Вернуться к полному списку проектов
+            .d-sm-none
+              a(href="portfolio.html").btn К списку проектов
           div
             a(href="#feedback").more.open-popup-link заявка на просчет
 

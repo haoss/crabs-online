@@ -89,10 +89,7 @@
     &__title {
       margin-left: 0;
     }
-  }
-  .about {
-    padding-top: 170px;
-  }
+  }  
   .section {
     &__header {
       &>.h1, &>h1, &>.h2, &>h2 {
@@ -144,12 +141,12 @@
       bottom: 50px;
     }
   }
+  .about {
+    padding-top: 170px;
+  }
 }
 
 @media only screen and (max-width: 1199px) {
-  // .container {
-  //   padding: 0 15px;
-  // }
   p {
     margin-bottom: 20px;
   }
@@ -203,10 +200,11 @@
     }
     &--top {
       padding-top: 165px;
-      padding-bottom: 130px;
+      padding-bottom: 80px;
     }
   }
   .about {
+    padding-bottom: 70px;
     &__wrapper {
       display: block;
       font-size: 16px;
@@ -222,6 +220,9 @@
     }
   }
   .services {
+    &:not([class*=section--top]) {
+      padding-bottom: 80px;
+    }
     &__wrapper {
       justify-content: flex-start;
       margin: 0 -15px;
@@ -268,6 +269,8 @@
     }
   }
   .projects {
+    padding-top: 125px;
+    padding-bottom: 90px;
     &__nav {
       margin-bottom: 75px;
       &-item {
@@ -329,7 +332,8 @@
     }
   }
   .achievements {
-    padding-top: 200px;
+    padding-top: 120px;
+    padding-bottom: 90px;
     &__block {
       font-size: 16px;
     }
@@ -347,7 +351,7 @@
     }
   }
   .clients {
-    padding-top: 150px;
+    padding-top: 130px;
     padding-bottom: 185px;
     &__wrapper {
       justify-content: flex-start;
@@ -360,7 +364,11 @@
     }
   }
   .request {
+    padding-top: 155px;
     padding-bottom: 85px;
+    &--inside {
+      padding-top: 0;
+    }
     &__block {
       margin-right: 0;
       padding-bottom: 50px;
@@ -479,7 +487,7 @@
           margin-top: 4px;
         }
       }
-      &--one-page {
+      &--one-service {
         padding-left: 110px;
         margin-bottom: 55px;
         &>.h1, &>h1, &>.h2, &>h2 {
@@ -513,8 +521,6 @@
   }
   .services {
     &__block {
-      // margin-left: 30px;
-      // margin-right: 30px;
       width: calc(50% - 30px);
     }
     &::before {
@@ -522,9 +528,13 @@
       background-color: #171717;
       background-size: cover;
     }
+    &__row {
+      [class*="-line"] {
+        background: $add-color-2;
+      }
+    }
   }
   .projects {
-    padding-top: 140px;
     &__nav {
       margin-bottom: 35px;
       margin-left: 0;
@@ -571,6 +581,9 @@
           margin-top: 25px;
         }
       }
+      &--one-project {
+        margin-bottom: 0;
+      }
     }
   }
   .btn {
@@ -581,7 +594,6 @@
     font-size: 14px;
   }
   .achievements {
-    padding-top: 140px;
     &__wrapper {
       flex-direction: column;
     }
@@ -601,7 +613,7 @@
     }
   }
   .clients {
-    padding-bottom: 145px;
+    padding-bottom: 125px;
     &__block {
       width: 50%;
       margin-bottom: 30px !important;
@@ -624,6 +636,9 @@
       }
       p:not(:last-child) {
         margin-bottom: 25px;
+      }
+      &--inside {
+        margin-bottom: 70px;
       }
     }
   }
@@ -761,7 +776,6 @@
   }
   .about {
     padding-top: 120px;
-    padding-bottom: 145px;
     &__wrapper {
       margin-left: 0;
       margin-right: 0;
@@ -789,6 +803,9 @@
   }
   .services {
     padding-bottom: 145px;
+    &:not([class*=section--top]) {
+      padding-top: 90px;
+    }
     &__footer {
       flex-direction: column;
       align-items: center;
@@ -827,7 +844,8 @@
     }
   }
   .projects {
-    padding-bottom: 130px;
+    padding-bottom: 60px;
+    padding-top: 105px;
     &__carousel {
       height: auto;
     }
@@ -863,6 +881,7 @@
     }
   }
   .achievements {
+    padding-top: 90px;
     &__block {
       padding-top: 60px;
       &-number {
@@ -880,14 +899,14 @@
     }
   }
   .clients {
-    padding-bottom: 120px;
+    padding-top: 90px;
     &__block img {
       height: 60px;
       max-width: 100px;
     }
   }
   .request {
-    padding-top: 115px;
+    padding-top: 155px;
     &__block {
       &--inside {
         margin-bottom: 75px;
@@ -947,9 +966,6 @@
       }
     }
   }
-  .projects {
-    
-  }
   .navigation {
     &::after {
       font-size: 150px;
@@ -994,8 +1010,11 @@
   }
   .section {
     &--top {
-      padding-top: 125px;
+      padding-top: 95px;
       padding-bottom: 70px;
+    }
+    &__text {
+      transform: translate(50px,10px);
     }
   }
   .services {
@@ -1015,6 +1034,39 @@
     &__gallery {
       &>div {
         width: 50%;
+      }
+    }
+  }
+  .projects {
+    padding-top: 75px;
+  }
+  .contacts {
+    &__links {
+      a {
+        width: 46px;
+        height: 46px;
+        font-size: 16px;
+      }
+    }
+  }
+  .one-page {
+    &__thumb {
+      margin-bottom: 30px;
+    }
+    &__content--one-project {
+      margin-bottom: 40px;
+    }
+    
+  }
+  .one-project {
+    &__gallery {
+      margin-bottom: 20px;
+    }
+    &__info {
+      margin-bottom: 50px;
+      font-size: 16px;
+      a {
+        font-size: 18px;
       }
     }
   }
@@ -1052,10 +1104,12 @@
           }
         }
       }
-      &--one-page {
+      &--one-service {
+        padding-left: 0 !important;
+        margin-bottom: 35px;
         &>.h1, &>h1, &>.h2, &>h2 {
           .icon-service-3 {
-            font-size: 50px;
+            display: none;
           }
         }
       }
@@ -1079,7 +1133,7 @@
   }
   .request {
     padding-bottom: 45px;
-    padding-top: 145px;
+    padding-top: 195px;
     &--inside {
       margin-top: -80px;
     }
@@ -1106,6 +1160,7 @@
     }
   }
   .footer {
+    padding-top: 40px;
     &__contacts {
       &-block {
         flex-direction: column;
@@ -1134,11 +1189,11 @@
       width: 100%;
       margin-left: 0;
       padding: 25px;
-      border-color: #1e1e1e;
+      border-color: $add-color-2;
       &-img {
         display: none;
       }
-      [class*="-line1"] {
+      [class*="-line"] {
         display: none;
       }
     }
