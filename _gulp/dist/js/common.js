@@ -124,7 +124,10 @@ $(window).on('resize', function() { });
 
 function navigation() {
   var btn = $('.header__btn');
-
+  // var tl = gsap.timeline();
+  // tl.from(".navigation ul li", {duration: 1, x: -50, opacity: 0, stagger: 0.25});
+  // tl.pause();
+  
   btn.on('click', function() {
     var _this = $(this);
     var body = $('body');
@@ -134,10 +137,12 @@ function navigation() {
       _this.removeClass('is-active');
       body.removeClass('is-active');
       nav.removeClass('is-active');
+      // tl.remove({'.navigation ul li': true});
     } else {
       _this.addClass('is-active');
       body.addClass('is-active');
       nav.addClass('is-active');
+      // tl.play();
     }
   })
 }
@@ -158,8 +163,10 @@ function scrollPage() {
   ;
   var scene1 = new ScrollMagic.Scene({
     triggerElement: "#section1",
-    reverse: false
+    reverse: false,
+    triggerHook: 0
   })
+    .setPin("#section1")
     .setTween(scene1Tl)
     .addTo(controller1);
 
@@ -167,13 +174,10 @@ function scrollPage() {
   var btn1Tl = gsap.timeline();
   btn1Tl
     .fromTo('#section-btn1', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
-    .fromTo('#section-btn1 > span', {autoAlpha: 0, height: 0}, {duration: 0.5, autoAlpha: 1, height: '160px'})
-    .fromTo('#section-btn1 > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
-    .fromTo('#section-btn1 > span > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
   ;  
   var btnScene1 = new ScrollMagic.Scene({
-    triggerElement: "#section2",
-    triggerHook: 0.9
+    triggerElement: "#section1",
+    triggerHook: 0.8
   })
     .setTween(btn1Tl)
     .addTo(controller2);
@@ -181,250 +185,250 @@ function scrollPage() {
   // Btn scrollTo 6
   var btn6Tl = gsap.timeline();
   btn6Tl
-    .fromTo('#section-btn6', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
-    .fromTo('#section-btn6 > span', {autoAlpha: 0, height: 0}, {duration: 0.5, autoAlpha: 1, height: '160px'})
-    .fromTo('#section-btn6 > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
-    .fromTo('#section-btn6 > span > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
-  ;
+      .fromTo('#section-btn6', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
+      .fromTo('#section-btn6 > span', {autoAlpha: 0, height: 0}, {duration: 0.5, autoAlpha: 1, height: '160px'})
+      .fromTo('#section-btn6 > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
+      .fromTo('#section-btn6 > span > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
+    ;
   var btnScene6 = new ScrollMagic.Scene({
-    triggerElement: "#section7",
-    triggerHook: 0.9
-  })
-    .setTween(btn6Tl)
-    .addTo(controller2);
+      triggerElement: "#section7",
+      triggerHook: 0.9
+    })
+      .setTween(btn6Tl)
+      .addTo(controller2);
 
   // Scene 2
   var scene2Tl = gsap.timeline();
   scene2Tl
-    .fromTo('#about__container .section__header', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('.about__slogan', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.about__content', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
-    .fromTo('.section__text--2', {autoAlpha: 0}, {duration: 1, autoAlpha: 0.06})
-  ;
+      .fromTo('#about__container .section__header', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('.about__slogan', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
+      .fromTo('.about__content', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
+      .fromTo('.section__text--2', {autoAlpha: 0}, {duration: 1, autoAlpha: 0.06})
+    ;
   var scene2 = new ScrollMagic.Scene({
-    triggerElement: "#section2",
-    triggerHook: 0.6,
-    reverse: false
-  })
-    .setTween(scene2Tl)
-    .addTo(controller1);
+      triggerElement: "#section2",
+      triggerHook: 0.6,
+      reverse: false
+    })
+      .setTween(scene2Tl)
+      .addTo(controller1);
 
   // Scene 3
   var scene3Tl = gsap.timeline();
   scene3Tl
-    .fromTo('#section3 .section__header', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo( '.services__block', {autoAlpha: 0, y: 25}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
-    .fromTo('#section3 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section3 .section__header', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo( '.services__block', {autoAlpha: 0, y: 25}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+      .fromTo('#section3 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
+    ;
   var scene3 = new ScrollMagic.Scene({
-    triggerElement: "#section3",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene3Tl)
-    .addTo(controller1);
+      triggerElement: "#section3",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene3Tl)
+      .addTo(controller1);
 
   // Scene 4
   var scene4Tl = gsap.timeline();
   scene4Tl
-    .fromTo('#section4 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-    .fromTo('#section4 .projects__nav', {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0})
-    .fromTo('#section4 .tab-content', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section4 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+      .fromTo('#section4 .projects__nav', {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0})
+      .fromTo('#section4 .tab-content', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+    ;
   var scene4 = new ScrollMagic.Scene({
-    triggerElement: "#section4",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene4Tl)
-    .addTo(controller1);
+      triggerElement: "#section4",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene4Tl)
+      .addTo(controller1);
 
   // Scene 5
   var scene5Tl = gsap.timeline();
   scene5Tl
-    .fromTo('#section5 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
-    .fromTo( '#section5 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
-  ;
+      .fromTo('#section5 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
+      .fromTo( '#section5 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
+    ;
   var scene5 = new ScrollMagic.Scene({
-    triggerElement: "#section5",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene5Tl)
-    .addTo(controller1);
+      triggerElement: "#section5",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene5Tl)
+      .addTo(controller1);
 
   // Scene 6
   var scene6Tl = gsap.timeline();
   scene6Tl
-    .fromTo('#section6 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
-    .fromTo( '.clients__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
-  ;
+      .fromTo('#section6 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
+      .fromTo( '.clients__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+    ;
   var scene6 = new ScrollMagic.Scene({
-    triggerElement: "#section6",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene6Tl)
-    .addTo(controller1);
+      triggerElement: "#section6",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene6Tl)
+      .addTo(controller1);
 
   // Scene 7
   var scene7Tl = gsap.timeline();
   scene7Tl
-    .fromTo('#section7 .request__block', {autoAlpha: 0, x: 50}, {duration: 1.5, autoAlpha: 1, x: 0})
-    .fromTo('#section7 .btn--1-service', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section7 .request__block', {autoAlpha: 0, x: 50}, {duration: 1.5, autoAlpha: 1, x: 0})
+      .fromTo('#section7 .btn--1-service', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+    ;
   var scene7 = new ScrollMagic.Scene({
-    triggerElement: "#section7",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene7Tl)
-    .addTo(controller1);
+      triggerElement: "#section7",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene7Tl)
+      .addTo(controller1);
 
   // Scene 8
   var scene8Tl = gsap.timeline();
   scene8Tl
-    .fromTo('.seo', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('.footer__center', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('.footer__bottom', {autoAlpha: 0}, {duration: 1.5, autoAlpha: 1})
-  ;
+      .fromTo('.seo', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('.footer__center', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('.footer__bottom', {autoAlpha: 0}, {duration: 1.5, autoAlpha: 1})
+    ;
   var scene8 = new ScrollMagic.Scene({
-    triggerElement: "#footer",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene8Tl)
-    .addTo(controller1);
+      triggerElement: "#footer",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene8Tl)
+      .addTo(controller1);
 
   // Scene 9
   var scene9Tl = gsap.timeline();
   scene9Tl
-    .fromTo('#section9 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-    .fromTo( '.contacts__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
-    .fromTo( '#section9 .projects__nav', {autoAlpha: 0, x: 50}, {duration: 0.5, autoAlpha: 1, x: 0})
-    .fromTo( '#tab-content', {autoAlpha: 0, x: -50}, {duration: 0.5, autoAlpha: 1, x: 0})
-  ;
+      .fromTo('#section9 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+      .fromTo( '.contacts__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+      .fromTo( '#section9 .projects__nav', {autoAlpha: 0, x: 50}, {duration: 0.5, autoAlpha: 1, x: 0})
+      .fromTo( '#tab-content', {autoAlpha: 0, x: -50}, {duration: 0.5, autoAlpha: 1, x: 0})
+    ;
   var scene9 = new ScrollMagic.Scene({
-    triggerElement: "#section9",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene9Tl)
-    .addTo(controller1);
+      triggerElement: "#section9",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene9Tl)
+      .addTo(controller1);
 
   // Scene 10
   var scene10Tl = gsap.timeline();
   scene10Tl
-    .fromTo('#section10 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-    .fromTo( '.services__row', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
-  ;
+      .fromTo('#section10 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+      .fromTo( '.services__row', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+    ;
   var scene10 = new ScrollMagic.Scene({
-    triggerElement: "#section10",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene10Tl)
-    .addTo(controller1);
+      triggerElement: "#section10",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene10Tl)
+      .addTo(controller1);
 
   // Scene 11
   var scene11Tl = gsap.timeline();
   scene11Tl
-    .fromTo('#section10 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section10 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
+    ;
   var scene11 = new ScrollMagic.Scene({
-    triggerElement: "#section10 .services__footer",
-    triggerHook: 0.7,
-    reverse: false
-  })
-    .setTween(scene11Tl)
-    .addTo(controller1);
+      triggerElement: "#section10 .services__footer",
+      triggerHook: 0.7,
+      reverse: false
+    })
+      .setTween(scene11Tl)
+      .addTo(controller1);
 
   // Scene 12
   var scene12Tl = gsap.timeline();
   scene12Tl
-    .fromTo('#section12 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-    .fromTo('#section12 .one-page__thumb', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section12 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+      .fromTo('#section12 .one-page__thumb', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+    ;
   var scene12 = new ScrollMagic.Scene({
-    triggerElement: "#section12",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene12Tl)
-    .addTo(controller1);
+      triggerElement: "#section12",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene12Tl)
+      .addTo(controller1);
 
   // Scene 13
   var scene13Tl = gsap.timeline();
   scene13Tl
-    .fromTo('#section12 .one-page__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-    .fromTo('#section12 .video__thumb', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('#section12 .one-page__content--center', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section12 .one-page__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+      .fromTo('#section12 .video__thumb', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section12 .one-page__content--center', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+    ;
   var scene13 = new ScrollMagic.Scene({
-    triggerElement: "#section12 .one-page__content--top",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene13Tl)
-    .addTo(controller1);
+      triggerElement: "#section12 .one-page__content--top",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene13Tl)
+      .addTo(controller1);
 
   // Scene 14
   var scene14Tl = gsap.timeline();
   scene14Tl
-    .fromTo( '#section12 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
-    .fromTo('#section12 .one-page__content--bottom', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
-  ;
+      .fromTo( '#section12 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
+      .fromTo('#section12 .one-page__content--bottom', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+    ;
   var scene14 = new ScrollMagic.Scene({
-    triggerElement: "#section12 .achievements__wrapper",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene14Tl)
-    .addTo(controller1);
+      triggerElement: "#section12 .achievements__wrapper",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene14Tl)
+      .addTo(controller1);
 
   // Scene 15
   var scene15Tl = gsap.timeline();
   scene15Tl
-    .fromTo('#section15 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-    .fromTo('#section15 .one-page__thumb--top', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section15 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
+      .fromTo('#section15 .one-page__thumb--top', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+    ;
   var scene15 = new ScrollMagic.Scene({
-    triggerElement: "#section15",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene15Tl)
-    .addTo(controller1);
+      triggerElement: "#section15",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene15Tl)
+      .addTo(controller1);
 
   // Scene 16
   var scene16Tl = gsap.timeline();
   scene16Tl
-    .fromTo('#section15 .one-page__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-    .fromTo('#section15 .one-project__gallery', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('#section15 .one-page__content--one-project', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section15 .one-page__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-project__gallery', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-page__content--one-project', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+    ;
   var scene16 = new ScrollMagic.Scene({
-    triggerElement: "#section15 .one-page__content--top",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene16Tl)
-    .addTo(controller1);
+      triggerElement: "#section15 .one-page__content--top",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene16Tl)
+      .addTo(controller1);
 
   // Scene 17
   var scene17Tl = gsap.timeline();
   scene17Tl
-    .fromTo('#section15 .one-page__thumb--bottom', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('#section15 .one-project__info', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-    .fromTo('#section15 .projects__footer', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-  ;
+      .fromTo('#section15 .one-page__thumb--bottom', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-project__info', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .projects__footer', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+    ;
   var scene17 = new ScrollMagic.Scene({
-    triggerElement: "#section15 .one-page__thumb--bottom",
-    triggerHook: 0.5,
-    reverse: false
-  })
-    .setTween(scene17Tl)
-    .addTo(controller1);
+      triggerElement: "#section15 .one-page__thumb--bottom",
+      triggerHook: 0.5,
+      reverse: false
+    })
+      .setTween(scene17Tl)
+      .addTo(controller1);
 
   // console.clear();
 

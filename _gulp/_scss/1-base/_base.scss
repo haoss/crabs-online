@@ -42,7 +42,7 @@ body {
 .body {
   &__social {
     position: fixed;
-    z-index: 25;
+    z-index: 55;
     left: 127px;
     top: calc(100vh - 185px - 185px);
     // bottom: 185px;
@@ -273,6 +273,7 @@ img, .img {
   min-height: 100vh;
   background-repeat: no-repeat;
   background-position: bottom center;
+  background-color: #171717;
   &::before, &::after {
     content: '';
     position: absolute;

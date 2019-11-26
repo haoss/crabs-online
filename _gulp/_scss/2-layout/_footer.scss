@@ -2,6 +2,7 @@
 .footer {
   background-color: #1B1B1B;
   padding-top: 120px;
+  position: relative;
   @include clearfix;
 
   &__bottom {
