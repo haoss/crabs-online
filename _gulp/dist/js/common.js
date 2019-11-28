@@ -124,7 +124,7 @@ $(window).on('resize', function() { });
 
 function navigation() {
   var btn = $('.header__btn');
-  // var tl = gsap.timeline();
+  // var tl = new TimelineMax();
   // tl.from(".navigation ul li", {duration: 1, x: -50, opacity: 0, stagger: 0.25});
   // tl.pause();
   
@@ -152,14 +152,14 @@ function scrollPage() {
   var controller2 = new ScrollMagic.Controller();
 
   // Scene 1
-  var scene1Tl = gsap.timeline();
+  var scene1Tl = new TimelineMax();
   scene1Tl
-    .from('.home__title', {duration: 1.5, autoAlpha: 0, y: 50}, 'scene1Tl-line1')
-    .from('.home__slogan', {duration: 1, autoAlpha: 0, y: 25}, '-=0.5')
-    .from('.home__content', {duration: 1, autoAlpha: 0, y: 25}, '-=0.5')
-    .from('.header__logo', {duration: 1, autoAlpha: 0, x: -25}, 'scene1Tl-line3')
-    .from('.body__social', {duration: 1, autoAlpha: 0, x: -25}, 'scene1Tl-line3')
-    .from('.header__btn', {duration: 1, autoAlpha: 0, x: 25}, 'scene1Tl-line3')
+    .from('.home__title', 1.5, {autoAlpha: 0, y: 50}, 'scene1Tl-line1')
+    .from('.home__slogan', 1, {autoAlpha: 0, y: 25}, '-=0.5')
+    .from('.home__content', 1, {autoAlpha: 0, y: 25}, '-=0.5')
+    .from('.header__logo', 1, {autoAlpha: 0, x: -25}, 'scene1Tl-line3')
+    .from('.body__social', 1, {autoAlpha: 0, x: -25}, 'scene1Tl-line3')
+    .from('.header__btn', 1, {autoAlpha: 0, x: 25}, 'scene1Tl-line3')
   ;
   var scene1 = new ScrollMagic.Scene({
     triggerElement: "#section1",
@@ -171,9 +171,9 @@ function scrollPage() {
     .addTo(controller1);
 
   // Btn scrollTo 1
-  var btn1Tl = gsap.timeline();
+  var btn1Tl = new TimelineMax();
   btn1Tl
-    .fromTo('#section-btn1', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
+    .fromTo('#section-btn1', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
   ;  
   var btnScene1 = new ScrollMagic.Scene({
     triggerElement: "#section1",
@@ -183,12 +183,12 @@ function scrollPage() {
     .addTo(controller2);
 
   // Btn scrollTo 6
-  var btn6Tl = gsap.timeline();
+  var btn6Tl = new TimelineMax();
   btn6Tl
-      .fromTo('#section-btn6', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0})
-      .fromTo('#section-btn6 > span', {autoAlpha: 0, height: 0}, {duration: 0.5, autoAlpha: 1, height: '160px'})
-      .fromTo('#section-btn6 > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
-      .fromTo('#section-btn6 > span > span > span', {autoAlpha: 0}, {duration: 0.5, autoAlpha: 1})
+      .fromTo('#section-btn6', 1,  {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+      .fromTo('#section-btn6 > span', 0.5, {autoAlpha: 0, height: 0}, {autoAlpha: 1, height: '160px'})
+      .fromTo('#section-btn6 > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
+      .fromTo('#section-btn6 > span > span > span', 0.5, {autoAlpha: 0}, {autoAlpha: 1})
     ;
   var btnScene6 = new ScrollMagic.Scene({
       triggerElement: "#section7",
@@ -198,12 +198,12 @@ function scrollPage() {
       .addTo(controller2);
 
   // Scene 2
-  var scene2Tl = gsap.timeline();
+  var scene2Tl = new TimelineMax();
   scene2Tl
-      .fromTo('#about__container .section__header', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('.about__slogan', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
-      .fromTo('.about__content', {autoAlpha: 0, y: 25}, {duration: 1, autoAlpha: 1, y: 0}, '-=0.5')
-      .fromTo('.section__text--2', {autoAlpha: 0}, {duration: 1, autoAlpha: 0.06})
+      .fromTo('#about__container .section__header', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('.about__slogan', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
+      .fromTo('.about__content', 1, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, '-=0.5')
+      .fromTo('.section__text--2', 1, {autoAlpha: 0}, {autoAlpha: 0.06})
     ;
   var scene2 = new ScrollMagic.Scene({
       triggerElement: "#section2",
@@ -214,11 +214,11 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 3
-  var scene3Tl = gsap.timeline();
+  var scene3Tl = new TimelineMax();
   scene3Tl
-      .fromTo('#section3 .section__header', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo( '.services__block', {autoAlpha: 0, y: 25}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
-      .fromTo('#section3 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section3 .section__header', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
+      .staggerFromTo( '.services__block', 0.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0}, 0.25)
+      .fromTo('#section3 .services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
     ;
   var scene3 = new ScrollMagic.Scene({
       triggerElement: "#section3",
@@ -229,11 +229,11 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 4
-  var scene4Tl = gsap.timeline();
+  var scene4Tl = new TimelineMax();
   scene4Tl
-      .fromTo('#section4 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-      .fromTo('#section4 .projects__nav', {autoAlpha: 0, x: 50}, {duration: 1, autoAlpha: 1, x: 0})
-      .fromTo('#section4 .tab-content', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+      .fromTo('#section4 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .fromTo('#section4 .projects__nav', 1, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
+      .fromTo('#section4 .tab-content', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene4 = new ScrollMagic.Scene({
       triggerElement: "#section4",
@@ -244,10 +244,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 5
-  var scene5Tl = gsap.timeline();
+  var scene5Tl = new TimelineMax();
   scene5Tl
-      .fromTo('#section5 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
-      .fromTo( '#section5 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
+      .fromTo('#section5 .section__header', 1.5,{autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .staggerFromTo( '#section5 .achievements__block', 1,{autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
     ;
   var scene5 = new ScrollMagic.Scene({
       triggerElement: "#section5",
@@ -258,10 +258,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 6
-  var scene6Tl = gsap.timeline();
+  var scene6Tl = new TimelineMax();
   scene6Tl
-      .fromTo('#section6 .section__header', {autoAlpha: 0, x: -50}, {duration: 1.5, autoAlpha: 1, x: 0})
-      .fromTo( '.clients__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+      .fromTo('#section6 .section__header', 1.5, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .staggerFromTo( '.clients__block', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene6 = new ScrollMagic.Scene({
       triggerElement: "#section6",
@@ -272,10 +272,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 7
-  var scene7Tl = gsap.timeline();
+  var scene7Tl = new TimelineMax();
   scene7Tl
-      .fromTo('#section7 .request__block', {autoAlpha: 0, x: 50}, {duration: 1.5, autoAlpha: 1, x: 0})
-      .fromTo('#section7 .btn--1-service', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section7 .request__block', 1.5, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
+      .fromTo('#section7 .btn--1-service', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene7 = new ScrollMagic.Scene({
       triggerElement: "#section7",
@@ -286,11 +286,11 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 8
-  var scene8Tl = gsap.timeline();
+  var scene8Tl = new TimelineMax();
   scene8Tl
-      .fromTo('.seo', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('.footer__center', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('.footer__bottom', {autoAlpha: 0}, {duration: 1.5, autoAlpha: 1})
+      .fromTo('.seo', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('.footer__center', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('.footer__bottom', 1.5, {autoAlpha: 0}, {autoAlpha: 1})
     ;
   var scene8 = new ScrollMagic.Scene({
       triggerElement: "#footer",
@@ -301,12 +301,12 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 9
-  var scene9Tl = gsap.timeline();
+  var scene9Tl = new TimelineMax();
   scene9Tl
-      .fromTo('#section9 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-      .fromTo( '.contacts__block', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
-      .fromTo( '#section9 .projects__nav', {autoAlpha: 0, x: 50}, {duration: 0.5, autoAlpha: 1, x: 0})
-      .fromTo( '#tab-content', {autoAlpha: 0, x: -50}, {duration: 0.5, autoAlpha: 1, x: 0})
+      .fromTo('#section9 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .staggerFromTo( '.contacts__block', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+      .fromTo( '#section9 .projects__nav', 0.5, {autoAlpha: 0, x: 50}, {autoAlpha: 1, x: 0})
+      .fromTo( '#tab-content', 0.5, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
     ;
   var scene9 = new ScrollMagic.Scene({
       triggerElement: "#section9",
@@ -317,10 +317,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 10
-  var scene10Tl = gsap.timeline();
+  var scene10Tl = new TimelineMax();
   scene10Tl
-      .fromTo('#section10 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-      .fromTo( '.services__row', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0, stagger: 0.25})
+      .fromTo('#section10 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .staggerFromTo( '.services__row', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
     ;
   var scene10 = new ScrollMagic.Scene({
       triggerElement: "#section10",
@@ -331,9 +331,9 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 11
-  var scene11Tl = gsap.timeline();
+  var scene11Tl = new TimelineMax();
   scene11Tl
-      .fromTo('#section10 .services__footer', {autoAlpha: 0, y: 25}, {duration: 1.5, autoAlpha: 1, y: 0})
+      .fromTo('#section10 .services__footer', 1.5, {autoAlpha: 0, y: 25}, {autoAlpha: 1, y: 0})
     ;
   var scene11 = new ScrollMagic.Scene({
       triggerElement: "#section10 .services__footer",
@@ -344,10 +344,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 12
-  var scene12Tl = gsap.timeline();
+  var scene12Tl = new TimelineMax();
   scene12Tl
-      .fromTo('#section12 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-      .fromTo('#section12 .one-page__thumb', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+      .fromTo('#section12 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .fromTo('#section12 .one-page__thumb', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene12 = new ScrollMagic.Scene({
       triggerElement: "#section12",
@@ -358,11 +358,11 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 13
-  var scene13Tl = gsap.timeline();
+  var scene13Tl = new TimelineMax();
   scene13Tl
-      .fromTo('#section12 .one-page__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-      .fromTo('#section12 .video__thumb', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('#section12 .one-page__content--center', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+      .fromTo('#section12 .one-page__content--top', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('#section12 .video__thumb', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('#section12 .one-page__content--center', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene13 = new ScrollMagic.Scene({
       triggerElement: "#section12 .one-page__content--top",
@@ -373,10 +373,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 14
-  var scene14Tl = gsap.timeline();
+  var scene14Tl = new TimelineMax();
   scene14Tl
-      .fromTo( '#section12 .achievements__block', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0, stagger: 0.25})
-      .fromTo('#section12 .one-page__content--bottom', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+      .staggerFromTo( '#section12 .achievements__block', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0}, 0.25)
+      .fromTo('#section12 .one-page__content--bottom', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene14 = new ScrollMagic.Scene({
       triggerElement: "#section12 .achievements__wrapper",
@@ -387,10 +387,10 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 15
-  var scene15Tl = gsap.timeline();
+  var scene15Tl = new TimelineMax();
   scene15Tl
-      .fromTo('#section15 .section__header', {autoAlpha: 0, x: -50}, {duration: 1, autoAlpha: 1, x: 0})
-      .fromTo('#section15 .one-page__thumb--top', {autoAlpha: 0, y: 50}, {duration: 1, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .section__header', 1, {autoAlpha: 0, x: -50}, {autoAlpha: 1, x: 0})
+      .fromTo('#section15 .one-page__thumb--top', 1, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene15 = new ScrollMagic.Scene({
       triggerElement: "#section15",
@@ -401,11 +401,11 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 16
-  var scene16Tl = gsap.timeline();
+  var scene16Tl = new TimelineMax();
   scene16Tl
-      .fromTo('#section15 .one-page__content--top', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
-      .fromTo('#section15 .one-project__gallery', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('#section15 .one-page__content--one-project', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-page__content--top', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-project__gallery', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-page__content--one-project', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene16 = new ScrollMagic.Scene({
       triggerElement: "#section15 .one-page__content--top",
@@ -416,11 +416,11 @@ function scrollPage() {
       .addTo(controller1);
 
   // Scene 17
-  var scene17Tl = gsap.timeline();
+  var scene17Tl = new TimelineMax();
   scene17Tl
-      .fromTo('#section15 .one-page__thumb--bottom', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('#section15 .one-project__info', {autoAlpha: 0, y: 50}, {duration: 1.5, autoAlpha: 1, y: 0})
-      .fromTo('#section15 .projects__footer', {autoAlpha: 0, y: 50}, {duration: 0.5, autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-page__thumb--bottom', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('#section15 .one-project__info', 1.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
+      .fromTo('#section15 .projects__footer', 0.5, {autoAlpha: 0, y: 50}, {autoAlpha: 1, y: 0})
     ;
   var scene17 = new ScrollMagic.Scene({
       triggerElement: "#section15 .one-page__thumb--bottom",
